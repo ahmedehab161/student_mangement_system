@@ -1,0 +1,18 @@
+.firsttimeform{
+    position: relative;
+    text-align: center;
+}
+.inputme{
+    height: 40px;
+    border: 2px solid blue;
+    border-radius: 10px;
+    margin: 15px;
+}
+.buttonme {
+    height: 40px;
+    width: 60px;
+    border: 2px solid blue;
+    border-radius: 10px;
+    margin: 15px;
+}
+

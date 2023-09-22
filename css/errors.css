@@ -1,0 +1,60 @@
+.info{
+    border: 1px solid;
+    margin: 10px 0px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.success{
+    border: 1px solid;
+    margin: 10px 0px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.warning{
+    border: 1px solid;
+    margin: 10px 0px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.error{
+    border: 1px solid;
+    margin: 10px 0px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.validation {
+    border: 1px solid;
+    margin: 10px 0px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.info {
+    color: #00529B;
+    background-color: #BDE5F8;
+    text-align: center;
+}
+
+.success {
+    color: #4F8A10;
+    background-color: #DFF2BF;
+    text-align: center;
+}
+
+.warning {
+    color: #9F6000;
+    background-color: #FEEFB3;
+    text-align: center;
+}
+
+.error {
+    color: #D8000C;
+    background-color: #FFBABA;
+    text-align: center;
+}
+
+.validation {
+    color: #D63301;
+    background-color: #FFCCBA;
+    text-align: center;
+}

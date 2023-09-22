@@ -1,0 +1,645 @@
+:root {
+    --blue-color: #0075ff;
+    --blue-alt-color: #0d69d5;
+    --orange-color: #f59e0b;
+    --green-color: #22c55e;
+    --red-color: #f44336;
+    --grey-color: #888;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    margin: 0;
+}
+
+*:focus {
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: white;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--blue-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--blue-alt-color);
+}
+
+.page {
+    background-color: #f1f5f9;
+    min-height: 100vh;
+}
+
+
+/* Start Sidebar */
+
+.si {
+    background-color: #f8a61a;
+}
+
+.sidebar {
+    width: 250px;
+    box-shadow: 0 0 10px #ddd;
+    height: 100%;
+}
+
+.sidebar>h3 {
+    margin-bottom: 50px;
+    font-size: 20px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: bold;
+}
+
+.sidebar>h3::before,
+.sidebar>h3::after {
+    content: "";
+    background-color: black;
+    transform: translateX(-50%);
+    position: absolute;
+    left: 50%;
+}
+
+.sidebar>h3::before {
+    width: 80px;
+    height: 2px;
+    bottom: -20px;
+}
+
+.sidebar>h3::after {
+    bottom: -29px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 4px solid white;
+}
+
+.sidebar ul li a {
+    transition: 0.3s;
+    margin-bottom: 5px;
+}
+
+.sidebar span {
+    margin-left: 15px;
+}
+
+.sidebar ul li a:hover,
+.sidebar ul li a.active {
+    background-color: var(--blue-color);
+    color: black;
+}
+
+.sidebar ul li a span {
+    font-size: 14px;
+    font-family: "Open Sans", sans-serif;
+}
+
+ol,
+ul {
+    padding-left: 0rem !important;
+}
+
+@media (max-width: 767px) {
+    .sidebar {
+        width: 58px;
+        padding: 10px;
+    }
+    .sidebar>h3 {
+        font-size: 13px;
+        margin-bottom: 15px;
+    }
+    .sidebar>h3::before,
+    .sidebar>h3::after {
+        display: none;
+    }
+    .sidebar ul li a span {
+        display: none;
+    }
+}
+
+.links {
+    text-decoration: none;
+}
+
+.AS-li-icon {
+    margin-left: 72px;
+}
+
+.E-li-icon {
+    margin-left: 111px;
+}
+
+.AS-li-icon-teach {
+    margin-left: 20px;
+}
+
+
+/* End Sidebar */
+
+
+/* Start Projects Page */
+
+.projects-page {
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+}
+
+@media (max-width: 767px) {
+    .projects-page {
+        grid-template-columns: minmax(200px, 1fr);
+        margin-left: 10px;
+        margin-right: 10px;
+        gap: 10px;
+    }
+}
+
+.projects-page .project .date {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.projects-page .project h4 {
+    font-weight: normal;
+}
+
+.projects-page .project .team {
+    position: relative;
+    min-height: 80px;
+}
+
+.projects-page .project .team a {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.projects-page .project .team a:nth-child(2) {
+    left: 25px;
+}
+
+.projects-page .project .team a:nth-child(3) {
+    left: 50px;
+}
+
+.projects-page .project .team a:nth-child(4) {
+    left: 75px;
+}
+
+.projects-page .project .team a:nth-child(5) {
+    left: 100px;
+}
+
+.projects-page .project .team a:hover {
+    z-index: 1000;
+}
+
+.projects-page .project .team img {
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+.projects-page .project .do {
+    justify-content: flex-end;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+    margin-top: 15px;
+}
+
+@media (max-width: 767px) {
+    .projects-page .project .do {
+        flex-direction: column;
+    }
+}
+
+.projects-page .project .do span {
+    padding: 3px 8px;
+    margin-left: 5px;
+    width: fit-content;
+}
+
+@media (max-width: 767px) {
+    .projects-page .project .do span:not(:last-child) {
+        margin-bottom: 15px;
+    }
+}
+
+.projects-page .project .info {
+    border-top: 1px solid #eee;
+    margin-top: 15px;
+    padding-top: 15px;
+}
+
+@media (max-width: 767px) {
+    .projects-page .project .info {
+        flex-direction: column;
+    }
+}
+
+.projects-page .project .prog {
+    height: 8px;
+    width: 260px;
+    position: relative;
+    border-radius: 6px;
+}
+
+@media (max-width: 767px) {
+    .projects-page .project .prog {
+        margin-bottom: 15px;
+    }
+}
+
+.projects-page .project .prog span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    border-radius: 6px;
+}
+
+
+/* End Projects Page */
+
+
+/* Start Content */
+
+.content {
+    overflow: hidden;
+}
+
+.head .search::before {
+    font-family: var(--fa-style-family-classic);
+    content: "\f002";
+    font-weight: 900;
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: var(--grey-color);
+}
+
+.head .search input {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-left: 5px;
+    padding-left: 30px;
+    width: 160px;
+    transition: width 0.3s;
+}
+
+.head .search input:focus {
+    width: 200px;
+}
+
+.head .search input:focus::placeholder {
+    opacity: 0;
+}
+
+.head .icons .notification::before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: var(--red-color);
+    border-radius: 50%;
+    right: -5px;
+    top: -5px;
+}
+
+.head .icons img {
+    width: 32px;
+    height: 32px;
+    margin-left: 15px;
+}
+
+.page h1 {
+    margin: 20px 20px 40px;
+}
+
+.page h1::before,
+.page h1::after {
+    content: "";
+    height: 3px;
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+}
+
+.page h1::before {
+    background-color: white;
+    width: 120px;
+}
+
+.page h1::after {
+    background-color: black;
+    width: 40px;
+}
+
+.wrapper {
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 767px) {
+    .wrapper {
+        grid-template-columns: minmax(200px, 1fr);
+        margin-left: 10px;
+        margin-right: 10px;
+        gap: 10px;
+    }
+}
+
+.add {
+    border-radius: 100% !important;
+    height: 6%;
+}
+
+
+/* End Content */
+
+
+/* ------------------------------------------------------------------------- */
+
+
+/* start Admin  */
+
+.ad-img-log {
+    width: 100%;
+    text-align: center;
+    padding-top: 150px;
+}
+
+.h2-to {
+    margin-top: 5px;
+}
+
+.delet {
+    background-color: #f44336 !important;
+}
+
+
+/* start Admin  */
+
+
+/* start Admin form dr */
+
+.formes {
+    width: 95% !important;
+    margin: auto;
+    border: 0 !important;
+    margin-top: 30px;
+}
+
+.chek {
+    margin-left: 100px;
+}
+
+.chek-gender {
+    display: flex;
+}
+
+.main-chek-gender {
+    margin-left: 50px !important;
+}
+
+.for-tim {
+    display: flex;
+}
+
+.main-for-tim {
+    width: 50%;
+}
+
+.doc-but {
+    display: flex;
+}
+
+.doc-but button {
+    margin-left: 20px;
+    margin-top: 30px;
+}
+
+.multipleSelection {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.selectBox {
+    position: relative;
+}
+
+.selectBox select {
+    width: 100%;
+    padding: 7px;
+}
+
+.overSelect {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+#checkBoxes {
+    display: none;
+    border: 1px #8DF5E4 solid;
+}
+
+#checkBoxes label {
+    display: block;
+}
+
+.btt {
+    background-color: #0075ff !important;
+    border: 0 !important;
+}
+
+
+/* end Admin form dr */
+
+
+/* start Admin form student */
+
+.link-but {
+    text-decoration: none;
+    color: white;
+    width: 100%;
+}
+
+.link-but:hover {
+    color: black;
+}
+
+.main-ul {
+    display: none;
+}
+
+.main-ul-li {
+    pointer-events: auto;
+    margin-left: 20px;
+    font-size: 14px;
+    padding: 20px;
+    font-family: "Open Sans", sans-serif;
+    border-radius: 10px;
+    border: 1px solid var(--blue-color);
+}
+
+ul li:hover>ul {
+    display: block;
+}
+
+.main-ul-li:hover {
+    background-color: var(--blue-color);
+}
+
+.link-ul {
+    text-decoration: none;
+    color: black;
+}
+
+.img-car {
+    border-radius: 30px !important;
+}
+
+.formes-st {
+    width: 80% !important;
+    margin: auto !important;
+    border: 0 !important;
+    margin-top: 30px;
+}
+
+.tit-car {
+    display: flex;
+}
+
+.tit-car button {
+    margin-left: 100px;
+}
+
+.ico {
+    color: #0075ff !important;
+    margin-right: 7px;
+}
+
+.cerd {
+    width: 33% !important;
+}
+
+.cerd-dpaet {
+    width: 90%;
+    margin: auto !important;
+    margin-top: 30px !important;
+}
+
+.main-cerd-dpaet {
+    width: 33% !important;
+    margin-top: 20px !important;
+}
+
+
+/* start table*/
+
+table {
+    margin-bottom: 50px;
+}
+
+.schedule-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.schedule-header h2 {
+    font-size: 30px;
+    text-align: center;
+    color: #171717;
+    padding-bottom: 10px;
+}
+
+.schedule-header__head::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 20%;
+    background-color: var();
+    width: 60%;
+    height: 4px;
+    border-radius: 6px;
+}
+
+.schedule {
+    color: #32177c;
+    width: 100%;
+    position: relative;
+    background-color: #ffffff;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.schedule-table {
+    width: 100%;
+    text-align: center;
+}
+
+.schedule-table td {
+    padding: 10px;
+    box-shadow: 0px 0px 3px 0px rgb(17, 17, 17);
+    border-collapse: collapse;
+    transition: var(--trans);
+    color: rgb(3, 3, 3);
+    font-weight: 700;
+}
+
+.schedule-table p {
+    opacity: 0.5;
+    font-size: 16px;
+    font-weight: 400;
+    padding-top: 1px;
+    color: rgb(0, 0, 0);
+}
+
+.schedule-table h4 {
+    font-weight: 200;
+    color: rgb(0, 0, 0);
+}
+
+.schedule-table td:hover {
+    background-color: var(--blue-color);
+    box-shadow: 0px 0px 20px -10px var(--blue-alt-color);
+    transform: scale3d(1.1, 1.1, 1.1);
+    border-radius: 4px;
+}
+
+.sch-hed {
+    background-color: #3d96fc;
+}
+
+
+/* end Admin schedule */
+
+
+/* end Admin form student */
