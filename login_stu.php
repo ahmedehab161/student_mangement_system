@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Title -->
     <link rel="shortcut icon" href="Image/Rectangle 3 copy.png">
-    <title>log-student</title>
+    <title>Log Student</title>
     <!-- CSS Links -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="css/all.min.css">
@@ -56,8 +56,12 @@
                         }
                     ?>
                     <input type="number" name="stuid" placeholder="Student ID" required>
-                    <input type="password" name="Password" placeholder="Password" required>
+                    <input type="password" name="Password" placeholder="Password" >
                     <input type="submit" name="submit" value="Login Now" class="form-btn">
+
+                    <h5 style = "color:red;">
+                        If It Is The First Time Entering The Site Do Not Enter A Password
+                    </h5>
                 </div>
             </form>
         </div>
@@ -72,6 +76,7 @@
         {
             const errorm = document.getElementById('errorm');
             errorm.style.display = 'none';
+            window.open('destroyerror.php');
         }, 4000);
     </script>
 </body>

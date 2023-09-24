@@ -33,7 +33,6 @@
                 <div class="p-20 bg-white rad-10 section2">
                 
                     <div class="form-group">
-                        <h3 style = "text-align:center;">Please Be Careful Buting The Password It Cannot Change Later</h3>
                         <?php
                             if(isset($_SESSION['error']))
                             {
@@ -44,6 +43,8 @@
                         ?>
 
                         <div class="firsttimeform">
+                            <lable class = "lableme">Your ID</lable>
+                            <input class = "inputme" value = "<?php session_start(); echo $_SESSION['first_time_id']; ?>" type = "number" required disabled style = "text-align:center;">
                             <lable class = "lableme">Your Password</lable>
                             <input class = "inputme" name = "password" type = "password" placeholder = "Enter Password" required>
                             <br>
@@ -59,6 +60,11 @@
                     </div>
                 <h4><iconify-icon icon="pajamas:question" style = "color:blue;"></iconify-icon> Why Iam Seeing This Page?</h4>
                 <p style="font-size: 15px;"><iconify-icon icon="icomoon-free:arrow-right2"></iconify-icon> Because This Is The First Time For You To Enter Your Account</p>
+                <h4>Please consider the following: </h4>
+                        <ol style = "margin-left:10px;"> 
+                            <li>Do not use an easy-to-guess password such as (0000, 1234 , ....)</li>
+                            <li>Please do not share your account data to ensure the security of your account!</li>
+                        </ol>
             </form>
             <!-- End Settings Box -->
         </div>
