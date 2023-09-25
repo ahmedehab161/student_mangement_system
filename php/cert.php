@@ -66,7 +66,7 @@
             echo
             '
                 <tr scope = "col">
-                    <th scope="row" colspan="4">'. "This Semester Is Not Registered" .'</th>
+                    <th style = "text-align:center;" scope="row" colspan="4">'. "This Semester Is Not Registered" .'</th>
                 </tr>
             ';
         }
