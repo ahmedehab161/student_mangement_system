@@ -30,7 +30,7 @@
             <div class="sid sidebar bg-white p-20 p-relative">
                 <h3 class="p-relative txt-c mt-0">Student</h3>
                 <?php
-                    require('nav.html');
+                    require('html/fixed_nav/nav.html');
                     require('php/connection.php');
                 ?>
             </div>
@@ -128,9 +128,9 @@
                 <div class="box p-20 rad-10 fs-13 c-grey sec" style = "text-align:center;margin:10px;">
                     <form method = "POST">
                         <span class="c-black fw-bold fs-25 mb-5"> 
-                            <span><b style = "font-size:20px;margin:10px;">Semester : </b></span>
-                            <span class="c-black fw-bold fs-25 mb-5"> 
-                                <select name = "semester" style = "width:110px;height:50px;text-align:center;background:blue;color:white;border-radius:10px;">
+                            <span><b style = "font-size:15px;margin:10px;">Semester : </b></span>
+                            <span class="c-black fw-bold fs-15 mb-5"> 
+                                <select name = "semester" style = "width:100px;height:30px;text-align:center;background:blue;color:white;border-radius:10px;">
                                     <?php
                                         $find_semseter2 = "SELECT * FROM semster";
                                         $semseter_find2 = mysqli_query($conn , $find_semseter2);
@@ -159,7 +159,7 @@
 
                         </span>
                         <span class="c-black fw-bold fs-25 mb-5"> 
-                            <input name = "get" type = "submit" value = "Results" style = "height:50px;width:80px;background:green;border:1px solid black;border-radius:10px;color:white;margin:10px;">
+                            <input name = "get" type = "submit" value = "Results" style = "height:50px;width:80px;background:green;border:1px solid black;border-radius:10px;color:white;margin:10px;font-size:15px;">
                         </span>
                     </form>
                 </div>
