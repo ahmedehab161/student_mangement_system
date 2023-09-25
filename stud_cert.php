@@ -158,7 +158,7 @@
                             </span>
 
                         </span>
-                        <span class="c-black fw-bold fs-25 mb-5"> 
+                        <span class="c-black fw-bold fs-15 mb-5"> 
                             <input name = "get" type = "submit" value = "Results" style = "height:50px;width:80px;background:green;border:1px solid black;border-radius:10px;color:white;margin:10px;font-size:15px;">
                         </span>
                     </form>
