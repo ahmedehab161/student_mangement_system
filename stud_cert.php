@@ -127,8 +127,8 @@
 
                 <div class="box p-20 rad-10 fs-13 c-grey sec" style = "text-align:center;margin:10px;">
                     <form method = "POST">
-                        <span class="c-black fw-bold fs-25 mb-5"> 
-                            <span><b style = "font-size:15px;margin:10px;">Semester : </b></span>
+                        <span class="c-black fw-bold fs-15 mb-5"> 
+                            <span><b style = "margin:10px;">Semester : </b></span>
                             <span class="c-black fw-bold fs-15 mb-5"> 
                                 <select name = "semester" style = "width:100px;height:30px;text-align:center;background:blue;color:white;border-radius:10px;">
                                     <?php
