@@ -63,12 +63,6 @@
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <script src="Js/all.min.js"></script>
         <script src="Js/main.js"></script>
-        <script>
-            setTimeout(() => 
-            {
-                const errorm = document.getElementById('errorm');
-                errorm.style.display = 'none';
-            }, 4000);
-    </script>
+        <script src = "js/destroyerror.js"></script>
     </body>
 </html>
