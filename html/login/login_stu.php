@@ -10,13 +10,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Title -->
-    <link rel="shortcut icon" href="Image/Rectangle 3 copy.png">
+    <link rel="shortcut icon" href="../../Image/Rectangle 3 copy.png">
     <title>Log Student</title>
     <!-- CSS Links -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/all.min.css">
-    <link rel="stylesheet" href="css/log-student.css">
-    <link rel="stylesheet" href="css/errors.css">
+    <link rel="stylesheet" href="../../css/all.min.css">
+    <link rel="stylesheet" href="../../css/log-student.css">
+    <link rel="stylesheet" href="../../css/errors.css">
 </head>
 
 <body class="body">
@@ -28,13 +28,13 @@
             <a href = "login_stu.php">
                 <h1 class="logo">Student</h1>
             </a>
-            <img src="imgs/team-03.png" alt="image">
+            <img src="../../imgs/team-03.png" alt="image">
         </div>
         <ul class="nav-right">
-            <a href="index.html" id="home">
+            <a href="../../index.html" id="home">
                 <li>Home</li>
             </a>
-            <a href="contact-us.html">
+            <a href="../../contact-us.html">
                 <li>Contacts</li>
             </a>
         </ul>
@@ -44,7 +44,7 @@
             <form action="" method = "post">
                 <h1>Login Here</h1>
                 <div>
-                    <img src="imgs/team-03.png" alt="" class="log-img-log">
+                    <img src="../../imgs/team-03.png" alt="" class="log-img-log">
                 </div>
                 <div class="inputs">
                     <?php
@@ -67,11 +67,11 @@
         </div>
     </div>
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
-    <script src="js/slider.js"></script>
+    <script src="../../js/slider.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="Js/all.min.js"></script>
-    <script src="Js/main.js"></script>
-    <script src = "js/destroyerror.js"></script>
+    <script src="../../Js/all.min.js"></script>
+    <script src="../../Js/main.js"></script>
+    <script src = "../../js/destroyerror.js"></script>
 </body>
 
 </html>

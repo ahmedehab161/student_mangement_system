@@ -45,7 +45,7 @@ else
                         $_SESSION['total_gba'] = $row['Total_Gba'];
                         $_SESSION['finished_hour'] = $row['finished_hour'];
                         $_SESSION['error'] = null;
-                        header('location:stud_cert.php');
+                        header('location:../../stud_cert.php');
                     }
                     else
                     {
@@ -57,7 +57,7 @@ else
                 {
                     $_SESSION['first_time_id'] = $ID;
                     error("Data Saved");
-                    header('location:html/student first enter/student_first_data.php');
+                    header('location:../student first enter/student_first_data.php');
                 }
             }
         }
