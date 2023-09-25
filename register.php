@@ -32,7 +32,7 @@
             <div class="sid sidebar bg-white p-20 p-relative">
                 <h3 class="p-relative txt-c mt-0">Student</h3>
                 <?php
-                    require('nav.html');
+                    require('html/fixed_nav/nav.html');
                     require('php/registered_subjects.php');
                     require('php/Register_subject.php');
                 ?>
