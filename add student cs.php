@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="Image/Rectangle 3 copy.png">
-    <title>Student</title>
+    <title>Students</title>
     <link rel="stylesheet" href="css/all.min.css" />
     <link rel="stylesheet" href="css/framework.css" />
     <link rel="stylesheet" href="css/Admin.css" />
@@ -17,9 +17,6 @@
 </head>
 
 <body>
-    <?php
-        include("php/add student cs.php");
-    ?>
     <div class="page d-flex">
         <div class="si">
             <div class="sidebar bg-white p-20 p-relative">
@@ -107,7 +104,7 @@
                                     <h3 class="modal-title fs-5" id="exampleModalLabel">Student Data</h3>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
                                         <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7Zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216ZM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/>
-                                      </svg>
+                                    </svg>
                                 </div>
 
                                 <div class="modal-body">
@@ -120,24 +117,20 @@
                                         </div>
                                         <div class="mb-3">
                                                 <div class="input-group flex-nowrap">
-                                                    <span class="input-group-text" id="addon-wrapping">@</span>
-                                                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping" name="Username">
+                                                    <span class="input-group-text" id="addon-wrapping"><i class="fa-solid fa-id-card"></i></span>
+                                                    <input type="number" class="form-control" placeholder="Student ID" aria-label="Username" aria-describedby="addon-wrapping" name="Username">
                                                 </div>
-                                            </div>
+                                        </div>
                                         <div class="mb-3">
-                                            <label for="message-text" class="col-form-label">password:</label>
+                                            <label for="message-text" class="col-form-label">Password:</label>
                                             <input type="number" class="form-control id" id="message-text" name="Password"></input>
                                         </div>
                                         <div class="mb-3">
-                                            <label for="message-text" class="col-form-label">Id:</label>
-                                            <input type="number" class="form-control id" id="message-text" name="Id"></input>
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="message-text" class="col-form-label">email:</label>
+                                            <label for="message-text" class="col-form-label">Email:</label>
                                             <input type="email" class="form-control eml" id="message-text" name="Email"></input>
                                         </div>
                                         <div class="mb-3">
-                                            <label for="message-text" class="col-form-label">phone:</label>
+                                            <label for="message-text" class="col-form-label">Phone:</label>
                                             <input type="number" class="form-control nums" id="message-text" name="Phone"></input>
                                         </div>
                                     
@@ -159,60 +152,61 @@
                                             <input type="date" class="form-control name" id="recipient-name" name="Birth_date">
                                         </div> 
                                         <div class="mb-3">
-                                                            <label for="message-text" class="col-form-label">img:</label>
-                                                            <input type="file" class="form-control imgs" id="message-text" name="image"></input>
-                                                        </div>
-                                        
+                                            <label for="message-text" class="col-form-label">Img:</label>
+                                            <input type="file" class="form-control imgs" id="message-text" name="image"></input>
+                                        </div>
                                         <div class="modal-footer">
                                             <input class="loginbt" type="submit" value="Add" name="add">
-                                            <input  class="loginbtr" type="reset" value="reset" name="reset">
-                                        
-                                            
+                                            <input  class="loginbtr" type="reset" value="Reset" name="reset">
                                         </div>
                                     </form>
-
-
-
-
                                 </div>
-
-
-
-                              
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="icons d-flex align-center">
-
-                </div>
+                <!-- Search -->
+                    <div class="icons align-center">
+                        <span>Search By ID</span>
+                        <input class = "search" type = "text">
+                        <select>
+                            <option>CS</option>
+                        </select>
+                        <button class = "btn btn-primary">Search</button>
+                    </div>
+                <!-- End Search -->
             </div>
             <!-- End Head -->
             <div class="modal-content formes">
                 <div class="doc-but">
-                    <h1 class="p-relative">Student computer Science</h1>
+                    <h1 class="p-relative">Students</h1>
                     <button type="button" class="btn btn-primary add" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">                        
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-plus-fill" viewBox="0 0 16 16">
-                        <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
-                        <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
-                      </svg>
-                        </button>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="25" fill="currentColor" class="bi bi-person-plus-fill" viewBox="0 0 16 16">
+                            <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                            <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
+                        </svg>
+                    </button>
+                    <button type="button" class="btn btn-primary add">                        
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="25" fill="currentColor" class="bi bi-person-plus-fill" viewBox="0 0 512 512">
+                            <path d="M0 64C0 28.7 28.7 0 64 0H224V128c0 17.7 14.3 32 32 32H384V304H176c-35.3 0-64 28.7-64 64V512H64c-35.3 0-64-28.7-64-64V64zm384 64H256V0L384 128zM200 352h16c22.1 0 40 17.9 40 40v8c0 8.8-7.2 16-16 16s-16-7.2-16-16v-8c0-4.4-3.6-8-8-8H200c-4.4 0-8 3.6-8 8v80c0 4.4 3.6 8 8 8h16c4.4 0 8-3.6 8-8v-8c0-8.8 7.2-16 16-16s16 7.2 16 16v8c0 22.1-17.9 40-40 40H200c-22.1 0-40-17.9-40-40V392c0-22.1 17.9-40 40-40zm133.1 0H368c8.8 0 16 7.2 16 16s-7.2 16-16 16H333.1c-7.2 0-13.1 5.9-13.1 13.1c0 5.2 3 9.9 7.8 12l37.4 16.6c16.3 7.2 26.8 23.4 26.8 41.2c0 24.9-20.2 45.1-45.1 45.1H304c-8.8 0-16-7.2-16-16s7.2-16 16-16h42.9c7.2 0 13.1-5.9 13.1-13.1c0-5.2-3-9.9-7.8-12l-37.4-16.6c-16.3-7.2-26.8-23.4-26.8-41.2c0-24.9 20.2-45.1 45.1-45.1zm98.9 0c8.8 0 16 7.2 16 16v31.6c0 23 5.5 45.6 16 66c10.5-20.3 16-42.9 16-66V368c0-8.8 7.2-16 16-16s16 7.2 16 16v31.6c0 34.7-10.3 68.7-29.6 97.6l-5.1 7.7c-3 4.5-8 7.1-13.3 7.1s-10.3-2.7-13.3-7.1l-5.1-7.7c-19.3-28.9-29.6-62.9-29.6-97.6V368c0-8.8 7.2-16 16-16z"/>
+                        </svg>
+                    </button>
                 </div>
 
                 <div class="modal-body">
                     <table class="table">
                         <thead class="table-light">
-                        <td>
-                                <h6>image</h6>
+                            <td>
+                                <h6>Image</h6>
                             </td>
                             <td>
-                                <h6>Id</h6>
+                                <h6>Student ID</h6>
                             </td>
                             <td>
                                 <h6>Name</h6>
                             </td>
                             <td>
-                                <h6>Username</h6>
+                                <h6>Department</h6>
                             </td>
                             <td>
                                 <h6>Password</h6>
@@ -230,72 +224,58 @@
                                 <h6>Address</h6>
                             </td>
                             <td>
-                                <h6>Birth_date</h6>
+                                <h6>Birth Date</h6>
                             </td>
-                          
                             <td>
                                 <h6>Operation</h6>
                             </td>
                         </thead>
                         <tbody>
-                           
-
-                        <?php
-
-
-                                    $num=mysqli_num_rows($query);
-                                    if($num>0){
-                                    while($result=mysqli_fetch_assoc($query)){
-
-
-                                    echo "  
-                                    <tr>
-                                        <td><img src='images/".$result['image']."' style='width:50px;height:50px;'></td>
-                                        <td>".$result['Id']."</td>
-                                        <td>".$result['Name']."</td>
-                                        <td>".$result['Username']."</td>
-                                        <td>".$result['Password']."</td>
-                                        <td>".$result['Email']."</td>
-                                        <td>".$result['Phone']."</td>
-                                        <td>".$result['Gender']."</td>
-                                        <td>".$result['Address']."</td>
-                                        <td>".$result['Birth_date']."</td>
-                                        <td> 
-                                        
-                                       
-                                        <button type='button' class='btn btn-primary adds'>
-                                            <a href = 'update_stucs.php'>
-                                                <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-pencil-square' viewBox='0 0 16 16'>
-                                                    <path d='M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z'/>
-                                                    <path fill-rule='evenodd' d='M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z'/>
-                                                </svg>
-                                            </a>
-                                        </button>
-
-                                         
-                                       
-                                        <button type='button' class='btn btn-secondary delet' data-bs-dismiss='modal'>
-                                        <a  href='add student cs.php?Id=".$result['Id']."'>  
-                                              <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-trash3-fill' viewBox='0 0 16 16'>
-                                                <path d='M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z'/>
-                                              </svg>
+                            <tr>
+                                <td>
+                                    Image
+                                </td>
+                                <td>
+                                    2019030006
+                                </td>
+                                <td>
+                                    Ahmed Ehab
+                                </td>
+                                <td>
+                                    CS
+                                </td>
+                                <td>
+                                    12345678
+                                </td>
+                                <td>
+                                    ahmedmedo012556@gmail.com
+                                </td>
+                                <td>
+                                    0115150988
+                                </td>
+                                <td>
+                                    Male
+                                </td>
+                                <td>
+                                    Nakhla El Motiea
+                                </td>
+                                <td>
+                                    26/09/2023
+                                </td>
+                                <td> 
+                                    <button type="button" class="btn btn-primary adds">
+                                        <a href = "#">
+                                            <i class="fa-regular fa-pen-to-square" style = "color:white;"></i>
                                         </a>
-                                             
-                                        </button>
-                                    </td>
+                                    </button>
 
-
-                                      
-                                    </tr>
-                                    ";
-                                    }
-
-                                    }
-                                    ?>
-
-
-
-                          
+                                    <button type="button" class="btn btn-secondary delet" data-bs-dismiss="modal">
+                                        <a  href = "#">  
+                                            <i class="fa-regular fa-trash-can" style = "color:white;"></i>
+                                        </a>
+                                    </button>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -304,7 +284,4 @@
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 </body>
-<?php
-        include("php/add student cs.php");
-    ?>
 </html>

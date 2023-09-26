@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html>
     <body>
-        <?php
-            include("php/updatestucsphp.php");
-        ?>
         <div class="head bg-white p-15 between-flex a">
                     <div class="newadds">
                         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -39,11 +36,11 @@
                                                 <input type="number" class="form-control id" id="message-text" name="Id"></input>
                                             </div>
                                             <div class="mb-3">
-                                                <label for="message-text" class="col-form-label">email:</label>
+                                                <label for="message-text" class="col-form-label">Email:</label>
                                                 <input type="email" class="form-control eml" id="message-text" name="Email"></input>
                                             </div>
                                             <div class="mb-3">
-                                                <label for="message-text" class="col-form-label">phone:</label>
+                                                <label for="message-text" class="col-form-label">Phone:</label>
                                                 <input type="number" class="form-control nums" id="message-text" name="Phone"></input>
                                             </div>
                                         
@@ -94,7 +91,4 @@
                     </div>
         </div> 
     </body>
-    <?php
-            include("php/updatestucsphp.php");
-    ?>
 </html>
