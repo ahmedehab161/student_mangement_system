@@ -5,11 +5,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="Image/Rectangle 3 copy.png">
+    <link rel="shortcut icon" href="../../../Image/Rectangle 3 copy.png">
     <title>Students</title>
-    <link rel="stylesheet" href="css/all.min.css" />
-    <link rel="stylesheet" href="css/framework.css" />
-    <link rel="stylesheet" href="css/Admin.css" />
+    <link rel="stylesheet" href="../../../css/all.min.css" />
+    <link rel="stylesheet" href="../../../css/framework.css" />
+    <link rel="stylesheet" href="../../../css/Admin.css" />
+    <link rel="stylesheet" href="../../../css/errors.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -17,6 +18,9 @@
 </head>
 
 <body>
+    <?php
+        require('php/csv_upload.php')
+    ?>
     <div class="page d-flex">
         <div class="si">
             <div class="sidebar bg-white p-20 p-relative">
@@ -84,7 +88,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-vcard-fill" viewBox="0 0 16 16">
                                 <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm9 1.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 0-1h-4a.5.5 0 0 0-.5.5ZM9 8a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 0-1h-4A.5.5 0 0 0 9 8Zm1 2.5a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 0-1h-3a.5.5 0 0 0-.5.5Zm-1 2C9 10.567 7.21 9 5 9c-2.086 0-3.8 1.398-3.984 3.181A1 1 0 0 0 2 13h6.96c.026-.163.04-.33.04-.5ZM7 6a2 2 0 1 0-4 0 2 2 0 0 0 4 0Z"/>
                               </svg>
-                            <span>student And Subject</span>
+                            <span>Student And Subject</span>
                         </a>
                     </li>
                 </ul>
@@ -116,10 +120,10 @@
                                             <input type="text" class="form-control name" id="recipient-name" name="Name">
                                         </div>
                                         <div class="mb-3">
-                                                <div class="input-group flex-nowrap">
-                                                    <span class="input-group-text" id="addon-wrapping"><i class="fa-solid fa-id-card"></i></span>
-                                                    <input type="number" class="form-control" placeholder="Student ID" aria-label="Username" aria-describedby="addon-wrapping" name="Username">
-                                                </div>
+                                            <div class="input-group flex-nowrap">
+                                                <span class="input-group-text" id="addon-wrapping"><i class="fa-solid fa-id-card"></i></span>
+                                                <input type="number" class="form-control" placeholder="Student ID" aria-label="Username" aria-describedby="addon-wrapping" name="Username">
+                                            </div>
                                         </div>
                                         <div class="mb-3">
                                             <label for="message-text" class="col-form-label">Password:</label>
@@ -137,7 +141,7 @@
                                             <div class="mb-3">
                                                 <label  class="col-form-label">Gender:</label>
                                             <select name="Gender"  required>
-                                            <option value="">No select</option>
+                                                <option value="">No select</option>
                                                 <option value="Male">Male</option>
                                                 <option value="Female">Female</option>
                                             </select>
@@ -152,7 +156,7 @@
                                             <input type="date" class="form-control name" id="recipient-name" name="Birth_date">
                                         </div> 
                                         <div class="mb-3">
-                                            <label for="message-text" class="col-form-label">Img:</label>
+                                            <label for="message-text" class="col-form-label">Image:</label>
                                             <input type="file" class="form-control imgs" id="message-text" name="image"></input>
                                         </div>
                                         <div class="modal-footer">
@@ -179,10 +183,10 @@
                                     <form action="" method="post" enctype="multipart/form-data">
                                         <div class="mb-3">
                                             <label for="recipient-name" class="col-form-label">Choose File</label>
-                                            <input type="file" required data-parsly-type = "file" data-parsly-trigger = "keyup" class="form-control name" id="recipient-name" name="exceldata">
+                                            <input type="file" required class="form-control name" name="exceldata">
                                         </div>
                                         <div class="modal-footer">
-                                            <input class="loginbt" type="submit" value="Upload" name="add">
+                                            <input class="loginbt" type="submit" value="Upload" name="upload">
                                             <input  class="loginbtr" type="reset" value="Undo" name="reset">
                                         </div>
                                     </form>
@@ -191,6 +195,21 @@
                         </div>
                     </div>
                 </div>
+                <!-- Error Section -->
+                    <?php
+                        if(isset($_SESSION['error']))
+                        {
+                            echo '<div id = "errorm" class = "error">';
+                                echo $_SESSION['error'];
+                            echo "</div>";
+                        }
+                        elseif(isset($_SESSION['suc']))
+                        {
+                            echo '<div id = "sucm" class = "success">';
+                                echo $_SESSION['suc'];
+                            echo "</div>";
+                        }
+                    ?>
                 <!-- Search -->
                     <div class="icons align-center">
                         <span>Search By ID</span>
@@ -309,5 +328,6 @@
         </div>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+        <script src = "../../../js/destroyerror.js"></script>
 </body>
 </html>
