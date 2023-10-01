@@ -145,7 +145,9 @@
                                                                 <th scope="row" style = "text-align:center;">' . $subject_type .'</th>
                                                             <form action = "php/Register_subject.php" method = "POST">
                                                                 <input type="hidden" name="subject_id" value="'.$allowed_to_register['id'].'">
-                                                                <th scope ="row" style = "text-align:center;"><input type="submit" name = "save" class="btn btn-info btn-lg" value = "Save" style = "background-color:green;"></th>
+                                                                <th scope ="row" style = "text-align:center;">
+                                                                    <input type="submit" name = "save" class="btn btn-info btn-lg" value = "Save" style = "background-color:green;">
+                                                                </th>
                                                             </form>
                                                         </tr>';
                                                     }
