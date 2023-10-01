@@ -3,16 +3,6 @@
     use PhpOffice\PhpSpreadsheet\Spreadsheet;
     use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
-    function suc($msg)
-    {
-        $_SESSION['suc'] = $msg;
-        return $_SESSION['suc'];
-    }
-    function error($msg)
-    {
-        $_SESSION['error'] = $msg;
-        return $_SESSION['error'];
-    }
     if(isset($_POST['upload']))
     {
     //     $excelMimes = array('text/xls', 'text/xlsx', 'application/excel', 'application/vnd.msexcel', 'application/vnd.ms-excel', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
