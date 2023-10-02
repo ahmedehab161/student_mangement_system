@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,11 +18,22 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500&display=swap" rel="stylesheet" />
+    <script>
+       $(document).ready(function(){
+        $("#txtsearch").on("keyup" , function(){
+            var value = $(this).val().toLowerCase();
+            $("#emp tr").filter(function(){
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+            $("#emp tr:first").show();
+        });
+       });
+    </script>
 </head>
 
 <body>
     <?php
-        require('php/csv_upload.php')
+        require('php/csv_upload.php');
     ?>
     <div class="page d-flex">
         <div class="si">
@@ -32,19 +46,19 @@
                                 <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5Z"/>
                                 <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6Z"/>
                               </svg>
-                            <span>Home</span>
+                            <span>Profile</span>
                         </a>
                     </li>
                     <li>
-                        <a class="d-flex active align-center fs-14 c-black rad-6 p-10 links" href="student.php">
+                        <a class="d-flex active align-center fs-14 c-black rad-6 p-10 links" href="http://127.0.0.1/Student_mangement_system/html/admin/student/admin_add_student.php">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
                                 <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"/>
                               </svg>
-                            <span>Student</span>
+                            <span>Students</span>
                         </a>
                     </li>
                     <li>
-                        <a class="d-flex  align-center fs-14 c-black rad-6 p-10 links" href="doctor.php">
+                        <a class="d-flex  align-center fs-14 c-black rad-6 p-10 links" href="http://127.0.0.1/Student_mangement_system/html/admin/student/admin_add_doctor.php">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
                                 <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7Zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216ZM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/>
                               </svg>
@@ -96,10 +110,22 @@
         </div>
         <div class="content w-full">
             <!-- Start Head -->
-
-
-
             <div class="head bg-white p-15 between-flex a">
+                <!-- Error Section -->
+                    <?php
+                        if(isset($_SESSION['error']))
+                        {
+                            echo '<div id = "errorm" class = "error">';
+                                echo $_SESSION['error'];
+                            echo "</div>";
+                        }
+                        elseif(isset($_SESSION['suc']))
+                        {
+                            echo '<div id = "sucm" class = "success">';
+                                echo $_SESSION['suc'];
+                            echo "</div>";
+                        }
+                    ?>
                 <div class="newadds">
                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
@@ -114,53 +140,60 @@
                                 <div class="modal-body">
                                     
 
-                                    <form action="#" method="post" enctype="multipart/form-data">
+                                    <form action="" method="POST" enctype="multipart/form-data">
                                         <div class="mb-3">
-                                            <label for="recipient-name" class="col-form-label">Name:</label>
-                                            <input type="text" class="form-control name" id="recipient-name" name="Name">
+                                            <label for="message-text" class="col-form-label">Image :</label>
+                                            <input type="file" class="form-control imgs" id="message-text" name="image"></input>
                                         </div>
                                         <div class="mb-3">
                                             <div class="input-group flex-nowrap">
                                                 <span class="input-group-text" id="addon-wrapping"><i class="fa-solid fa-id-card"></i></span>
-                                                <input type="number" class="form-control" placeholder="Student ID" aria-label="Username" aria-describedby="addon-wrapping" name="Username">
+                                                <input type="number" class="form-control" placeholder="Student ID" aria-label="Student ID" aria-describedby="addon-wrapping" name="student_id">
                                             </div>
                                         </div>
                                         <div class="mb-3">
-                                            <label for="message-text" class="col-form-label">Password:</label>
-                                            <input type="number" class="form-control id" id="message-text" name="Password"></input>
+                                            <label for="recipient-name" class="col-form-label">Name :</label>
+                                            <input type="text" class="form-control name" id="recipient-name" name="name">
                                         </div>
                                         <div class="mb-3">
-                                            <label for="message-text" class="col-form-label">Email:</label>
-                                            <input type="email" class="form-control eml" id="message-text" name="Email"></input>
+                                            <label for="message-text" class="col-form-label">Password :</label>
+                                            <input type="number" class="form-control id" id="message-text" name="password"></input>
                                         </div>
                                         <div class="mb-3">
-                                            <label for="message-text" class="col-form-label">Phone:</label>
-                                            <input type="number" class="form-control nums" id="message-text" name="Phone"></input>
+                                            <label for="message-text" class="col-form-label">Email :</label>
+                                            <input type="email" class="form-control eml" id="message-text" name="email"></input>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="message-text" class="col-form-label">Phone :</label>
+                                            <input type="number" class="form-control nums" id="message-text" name="phone"></input>
                                         </div>
                                     
                                             <div class="mb-3">
-                                                <label  class="col-form-label">Gender:</label>
-                                            <select name="Gender"  required>
-                                                <option value="">No select</option>
+                                                <label  class="col-form-label">Gender :</label>
+                                            <select name="gender"  required>
+                                                <option value="">No Select</option>
                                                 <option value="Male">Male</option>
                                                 <option value="Female">Female</option>
                                             </select>
                                             </div>
                                     
                                         <div class="mb-3">
-                                            <label for="recipient-name" class="col-form-label">Address:</label>
-                                            <input type="text" class="form-control name" id="recipient-name" name="Address">
+                                            <label for="recipient-name" class="col-form-label">Address :</label>
+                                            <input type="text" class="form-control name" id="recipient-name" name="address">
                                         </div>
                                         <div class="mb-3">
                                             <label for="recipient-name" class="col-form-label">Birth Date:</label>
-                                            <input type="date" class="form-control name" id="recipient-name" name="Birth_date">
+                                            <input type="date" class="form-control name" id="recipient-name" name="birth">
                                         </div> 
                                         <div class="mb-3">
-                                            <label for="message-text" class="col-form-label">Image:</label>
-                                            <input type="file" class="form-control imgs" id="message-text" name="image"></input>
+                                            <label for="message-text" class="col-form-label">Department :</label>
+                                            <select name="depart"  required>
+                                                <option value="">No Select</option>
+                                                <option value="CS">CS</option>
+                                            </select>
                                         </div>
                                         <div class="modal-footer">
-                                            <input class="loginbt" type="submit" value="Add" name="add">
+                                            <input class="loginbt" type="submit" value="Save" name="add">
                                             <input  class="loginbtr" type="reset" value="Reset" name="reset">
                                         </div>
                                     </form>
@@ -195,29 +228,14 @@
                         </div>
                     </div>
                 </div>
-                <!-- Error Section -->
-                    <?php
-                        if(isset($_SESSION['error']))
-                        {
-                            echo '<div id = "errorm" class = "error">';
-                                echo $_SESSION['error'];
-                            echo "</div>";
-                        }
-                        elseif(isset($_SESSION['suc']))
-                        {
-                            echo '<div id = "sucm" class = "success">';
-                                echo $_SESSION['suc'];
-                            echo "</div>";
-                        }
-                    ?>
                 <!-- Search -->
                     <div class="icons align-center">
-                        <span>Search By ID</span>
+                        <span>Search By Any  Parameter</span>
                         <input class = "search" type = "text">
-                        <select name = "depatment">
+                        <!-- <select name = "depatment">
                             <option value = "CS">CS</option>
-                        </select>
-                        <button class = "btn btn-primary">Search</button>
+                        </select> -->
+                        <!-- <button class = "btn btn-primary">Search</button> -->
                     </div>
                 <!-- End Search -->
             </div>
@@ -271,56 +289,84 @@
                             <td>
                                 <h6>Birth Date</h6>
                             </td>
-                            <td>
+                            <td colspan = "2">
                                 <h6>Operation</h6>
                             </td>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    Image
-                                </td>
-                                <td>
-                                    2019030006
-                                </td>
-                                <td>
-                                    Ahmed Ehab
-                                </td>
-                                <td>
-                                    CS
-                                </td>
-                                <td>
-                                    12345678
-                                </td>
-                                <td>
-                                    ahmedmedo012556@gmail.com
-                                </td>
-                                <td>
-                                    01151509888
-                                </td>
-                                <td>
-                                    Male
-                                </td>
-                                <td>
-                                    Nakhla El Motiea
-                                </td>
-                                <td>
-                                    26/09/2023
-                                </td>
-                                <td> 
-                                    <button type="button" class="btn btn-primary adds">
-                                        <a href = "#">
-                                            <i class="fa-regular fa-pen-to-square" style = "color:white;"></i>
-                                        </a>
-                                    </button>
+                        <tbody id = "data">
+                            <?php 
+                                require('php/add_new_student.php');
+                                $select = "select * from students";
+                                $show = mysqli_query($conn, $select);
+                                if(mysqli_num_rows($show) > 0)
+                                {
+                                    foreach($show as $data)
+                                    {
+                                        echo 
+                                        '
+                                            <tr>
+                                                <td>
+                                                    <img src = "images/'. $data['image'] .'" height = "80px" width = "80px">
+                                                </td>
+                                                <td>
+                                                    '. $data['stu_id'] .'
+                                                </td>
+                                                <td>
+                                                    '. $data['name'] .'
+                                                </td>
+                                                <td>
+                                                    '. $data['depart'] .'
+                                                </td>
+                                                <td>
+                                                    '. $data['password'] .'
+                                                </td>
+                                                <td>
+                                                    '. $data['email'] .'
+                                                </td>
+                                                <td>
+                                                    '. '0' . $data['phone'] .'
+                                                </td>
+                                                <td>
+                                                    '. $data['gender'] .'
+                                                </td>
+                                                <td>
+                                                    '. $data['address'] .'
+                                                </td>
+                                                <td>
+                                                    '. $data['birth_date'] .'
+                                                </td>
+                                                <td> 
+                                                    <button type="button" class="btn btn-primary adds">
+                                                        <a href = "'. $data['id'] .'">
+                                                            <i class="fa-regular fa-pen-to-square" style = "color:white;"></i>
+                                                        </a>
+                                                    </button>
+                                                </td>
+                                                <td>
+                                                    <form action = "php/delete_student.php" method = "POST">
+                                                        <input type = "hidden" name = "id" value = " '. $data['id'] .' ">
+                                                        <button type="submit" class="btn btn-secondary delet" data-bs-dismiss="modal">
+                                                            <i class="fa-regular fa-trash-can" style = "color:white;"></i>
+                                                        </button>
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                        ';
+                                    }
+                                }
+                                else
+                                {
+                                    echo 
+                                    '
+                                        <tr>
+                                            <th style = "text-align:center;color:red;" colspan = "12">
+                                                No Students Rigth Now ..!
+                                            </th>
+                                        </tr>
 
-                                    <button type="button" class="btn btn-secondary delet" data-bs-dismiss="modal">
-                                        <a  href = "#">  
-                                            <i class="fa-regular fa-trash-can" style = "color:white;"></i>
-                                        </a>
-                                    </button>
-                                </td>
-                            </tr>
+                                    ';
+                                }                                
+                            ?>
                         </tbody>
                     </table>
                 </div>
