@@ -15,7 +15,7 @@ if($_POST['add'])
     $depart = $_POST['depart'];
 
     $newfilename = date('dmYHis').str_replace(" " , "" , basename($_FILES["image"]["name"]));
-    move_uploaded_file($_FILES["image"]["tmp_name"], "images/" . $newfilename);
+    move_uploaded_file($_FILES["image"]["tmp_name"], "../images/" . $newfilename);
 
     $query = "INSERT INTO students VALUES('' , '$newfilename' , '$student_id' , '$name' , '$password' , '$email' , '$address' , '$phone' , '$gender' , '$birth_date' , '$depart' , 'active' , '1' , '18' , '8' , '0' , 'F' , '0' , NULL , NULL , NULL)";
     mysqli_query($conn , $query);

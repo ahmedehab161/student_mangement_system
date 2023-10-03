@@ -8,11 +8,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="Image/Rectangle 3 copy.png">
+    <link rel="shortcut icon" href="../../../Image/Rectangle 3 copy.png">
     <title>Doctor</title>
-    <link rel="stylesheet" href="css/all.min.css" />
-    <link rel="stylesheet" href="css/framework.css" />
-    <link rel="stylesheet" href="css/Admin.css" />
+    <link rel="stylesheet" href="../../../css/all.min.css" />
+    <link rel="stylesheet" href="../../../css/framework.css" />
+    <link rel="stylesheet" href="../../../css/Admin.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -26,7 +26,7 @@
                 <h3 class="p-relative txt-c mt-0">Admin</h3>
                 <ul>
                     <li>
-                        <a class="d-flex align-center fs-14 c-black rad-6 p-10 links" href="#">
+                        <a class="d-flex align-center fs-14 c-black rad-6 p-10 links" href="http://127.0.0.1/Student_mangement_system/html/admin/profile.php">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-fill" viewBox="0 0 16 16">
                                 <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5Z"/>
                                 <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6Z"/>
@@ -43,7 +43,7 @@
                         </a>
                     </li>
                     <li>
-                        <a class="d-flex active align-center fs-14 c-black rad-6 p-10 links" href="http://127.0.0.1/Student_mangement_system/html/admin/student/admin_add_doctor.php">
+                        <a class="d-flex active align-center fs-14 c-black rad-6 p-10 links" href="http://127.0.0.1/Student_mangement_system/html/admin/doctor/admin_add_doctor.php">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
                                 <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7Zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216ZM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/>
                               </svg>
@@ -87,7 +87,19 @@
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-vcard-fill" viewBox="0 0 16 16">
                                 <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm9 1.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 0-1h-4a.5.5 0 0 0-.5.5ZM9 8a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 0-1h-4A.5.5 0 0 0 9 8Zm1 2.5a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 0-1h-3a.5.5 0 0 0-.5.5Zm-1 2C9 10.567 7.21 9 5 9c-2.086 0-3.8 1.398-3.984 3.181A1 1 0 0 0 2 13h6.96c.026-.163.04-.33.04-.5ZM7 6a2 2 0 1 0-4 0 2 2 0 0 0 4 0Z"/>
                               </svg>
-                            <span>student And Subject</span>
+                            <span>Student And Subject</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="d-flex  align-center fs-14 c-black rad-6 p-10 links" style = "text-decoration: none;" href="../../../logout.php">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 48 48">
+                                <g fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="4">
+                                    <path d="M23.9917 6H6V42H24" />
+                                    <path d="M33 33L42 24L33 15" />
+                                    <path d="M16 23.9917H42" />
+                                </g>
+                            </svg>
+                            <span>Logout</span>
                         </a>
                     </li>
                 </ul>
@@ -216,25 +228,14 @@
                     </div>
                 </div>
                 <div class="icons d-flex align-center">
-                    <div class="dropdown">
-                        <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-                              </svg>
-                            <span>Enquiry</span>
-                        </button>
-                        <form class="dropdown-menu p-4">
-                            <div class="mb-3">
-
-                                <input type="text" class="form-control" placeholder="Username">
-                            </div>
-                            <div class="mb-3">
-
-                                <input type="number" class="form-control" placeholder="id">
-                            </div>
-
-                            <button type="submit" class="btn btn-primary">Enquiry</button>
-                        </form>
+                    <div class="icons d-flex align-center">
+                        <!-- <span class="notification p-relative">
+                            <i class="fa-regular fa-bell fa-lg"></i>
+                        </span> -->
+                        <a href = "../profile.php" style = "text-decoration:none;color:black;">
+                            <img src="<?php if($_SESSION['image'] == NULL){echo "../../../imgs/avatar.png";}else{echo "../images/" . $_SESSION['image'];} ?>" alt="User Image" />
+                            <?php echo "<span style = 'margin-left:3px;'><b>". $_SESSION['name'] ."</b></span>" ?>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -289,56 +290,7 @@
                             </td>
                         </thead>
                         <tbody>
-                        <?php
-                            $num=mysqli_num_rows($query);
-                            if($num>0){
-                            while($result=mysqli_fetch_assoc($query)){
-
-
-                            echo "  
-                            <tr>
-                                <td><img src='images/".$result['image']."' style='width:50px;height:50px;'></td>
-                                <td>".$result['Id']."</td>
-                                <td>".$result['Name']."</td>
-                                <td>".$result['Password']."</td>
-                                <td>".$result['Email']."</td>
-                                <td>".$result['Phone']."</td>
-                                <td>".$result['Gender']."</td>
-                                <td>".$result['Address']."</td>
-                                <td>".$result['days']."</td>
-                                <td>".$result['fhours']."</td>
-                                <td> 
-                                
-                            
-                                <button type='button' class='btn btn-primary adds'>
-                                    <a href = 'update_dr.php' >
-                                        <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-pencil-square' viewBox='0 0 16 16'>
-                                            <path d='M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z'/>
-                                            <path fill-rule='evenodd' d='M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z'/>
-                                        </svg>
-                                    </a>
-                                </button>
-
-                                
-                            
-                                <button type='button' class='btn btn-secondary delet' data-bs-dismiss='modal'>
-                                <a  href='doctor.php?Id=".$result['Id']."'>  
-                                    <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-trash3-fill' viewBox='0 0 16 16'>
-                                        <path d='M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z'/>
-                                    </svg>
-                                </a>
-                                    
-                                </button>
-                            </td>
-
-
-                            
-                            </tr>
-                            ";
-                            }
-
-                            }
-                            ?>
+                        
                         </tbody>
                     </table>
                 </div>
@@ -348,7 +300,4 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 </body>
-<?php 
-        include("php/add doctor.php");
-    ?>
 </html>
