@@ -1,5 +1,5 @@
 <?php
-    require('../../php/connection.php');
+    require('../php/connection.php');
     session_start();
     if(isset($_POST['save']))
     {
@@ -11,6 +11,6 @@
         $query = " UPDATE students SET password = '$password' , email = '$email' , address = '$address' , phone = '$phonenumber' WHERE stu_id = '{$_SESSION['first_time_id']}' ";
         mysqli_query($conn, $query);
 
-        header("location:../../login_stu.php");
+        header("location:../login/login_stu.php");
     }
 ?>

@@ -3,7 +3,7 @@
     if(!isset($_SESSION['username']))
     {
         $_SESSION['error'] = "You Connot Enter This Page Befor Login";
-        header('location:login_stu.php');
+        header('location:login/login_stu.php');
     }
 ?>
 <!DOCTYPE html>
@@ -14,17 +14,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="shortcut icon" href="Image/Rectangle 3 copy.png">
         <title>Subjects Register</title>
-        <link rel="stylesheet" href="css/all.min.css" />
-        <link rel="stylesheet" href="css/framework.css" />
-        <link rel="stylesheet" href="css/dr-forms.css" />
+        <link rel="stylesheet" href="../css/all.min.css" />
+        <link rel="stylesheet" href="../css/framework.css" />
+        <link rel="stylesheet" href="../css/dr-forms.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500&display=swap" rel="stylesheet" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" href="css/errors.css">
-        <link rel="stylesheet" href="css/tables.css">
+        <link rel="stylesheet" href="../css/errors.css">
+        <link rel="stylesheet" href="../css/tables.css">
     </head>
     <body>
             <div class="page d-flex">
@@ -32,7 +32,7 @@
             <div class="sid sidebar bg-white p-20 p-relative">
                 <h3 class="p-relative txt-c mt-0">Student</h3>
                 <?php
-                    require('html/fixed_nav/nav.html');
+                    require('fixed_nav/nav.html');
                     require('php/registered_subjects.php');
                     require('php/Register_subject.php');
                 ?>

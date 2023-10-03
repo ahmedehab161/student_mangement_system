@@ -9,7 +9,7 @@
 if(isset($_SESSION['username']))
 {
     $_SESSION['error'] = "You Already Login";
-    header('location:stud_cert.php');
+    header('location:../stud_cert.php');
 
 }
 else
@@ -57,7 +57,7 @@ else
                 {
                     $_SESSION['first_time_id'] = $ID;
                     error("Data Saved");
-                    header('location:../student first enter/student_first_data.php');
+                    header('location:../student_first_enter/student_first_data.php');
                 }
             }
         }
