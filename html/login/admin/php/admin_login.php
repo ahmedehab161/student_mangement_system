@@ -32,6 +32,7 @@
                 }
                 elseif($row['activity'] == "active")
                 {
+                    $_SESSION['workid'] = $row['work_id'];
                     $_SESSION['image'] = $row['image'];
                     $_SESSION['name'] = $row['name'];
                     $_SESSION['tableadminid'] = $row['id'];

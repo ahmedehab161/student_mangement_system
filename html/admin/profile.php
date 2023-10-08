@@ -17,6 +17,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../../css/errors.css" />
 </head>
 
 <body>
@@ -93,15 +94,23 @@
             <!-- Start Head -->
             <div class="head bg-white p-15 between-flex a">
                 <div>
+                    <?php
+                        if(isset($_SESSION['error']))
+                        {
+                            echo '<div id = "errorm" class = "error">';
+                                echo $_SESSION['error'];
+                            echo "</div>";
+                        }
+                        elseif(isset($_SESSION['suc']))
+                        {
+                            echo '<div id = "sucm" class = "success">';
+                                echo $_SESSION['suc'];
+                            echo "</div>";
+                        }
+                    ?>
                 </div>
                 <div class="icons d-flex align-center">
-                    <!-- <span class="notification p-relative">
-                        <i class="fa-regular fa-bell fa-lg"></i>
-                    </span> -->
-                    <a href = "profile.php" style = "text-decoration:none;color:black;">
-                        <img src="<?php if($_SESSION['image'] == NULL){echo "../../imgs/avatar.png";}else{echo "images/" . $_SESSION['image'];} ?>" alt="User Image" />
-                        <?php echo "<span style = 'margin-left:3px;'><b>". $_SESSION['name'] ."</b></span>" ?>
-                    </a>
+                    
                 </div>
             </div>
             <div style = "text-align:center;">
@@ -114,6 +123,7 @@
             <!-- End Head -->
         </div>
     </div>
+    <script src = "../../js/destroyerror.js"></script>
 </body>
 
 </html>
