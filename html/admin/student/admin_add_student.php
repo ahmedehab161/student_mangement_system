@@ -1,5 +1,10 @@
 <?php
     session_start();
+    if(!isset($_SESSION['tableadminid']))
+    {
+        $_SESSION['error'] = "You Connot Enter This Page Befor Login";
+        header('location:../../login/admin/login_admin.php');
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
