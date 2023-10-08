@@ -1,5 +1,6 @@
 <?php
     session_start();
+    require('php/connection.php');
     if(!isset($_SESSION['tableadminid']))
     {
         $_SESSION['error'] = "You Connot Enter This Page Befor Login";
@@ -262,6 +263,9 @@
                                 <h6>Phone</h6>
                             </td>
                             <td>
+                                <h6>Email</h6>
+                            </td>
+                            <td>
                                 <h6>Address</h6>
                             </td>
                             <td>
@@ -271,11 +275,86 @@
                                 <h6>Work Days</h6>
                             </td>
                             <td>
+                                <h6>Activity</h6>
+                            </td>
+                            <td colspan = "2">
                                 <h6>Operation</h6>
                             </td>
                         </thead>
                         <tbody>
-                        
+                            <?php
+                                require('php/add_new_doctor.php');
+                                $select = "select * from dr_staff";
+                                $show = mysqli_query($conn , $select);
+                                if(mysqli_num_rows($show) > 0)
+                                {
+                                    foreach($show as $data)
+                                    {
+                                        echo 
+                                        '
+                                            <tr>
+                                                <td>
+                                                    <img src = "../images/'. $data['image'] .'" height = "80px" width = "80px">
+                                                </td>
+                                                <td>
+                                                    '. $data['work_id'] .'
+                                                </td>
+                                                <td>
+                                                    '. $data['name'] .'
+                                                </td>
+                                                <td>
+                                                    '. $data['password'] .'
+                                                </td>
+                                                <td>
+                                                    '. $data['phone'] .'
+                                                </td>
+                                                <td>
+                                                    '. $data['email'] .'
+                                                </td>
+                                                <td>
+                                                    '. $data['address'] .'
+                                                </td>
+                                                <td>
+                                                    '. $data['gender'] .'
+                                                </td>
+                                                <td>
+                                                    '. $data['work_days'] .'
+                                                </td>
+                                                <td>
+                                                    '. $data['activity'] .'
+                                                </td>
+                                                <td> 
+                                                    <button type="button" class="btn btn-primary adds">
+                                                        <a href = "'. $data['id'] .'">
+                                                            <i class="fa-regular fa-pen-to-square" style = "color:white;"></i>
+                                                        </a>
+                                                    </button>
+                                                </td>
+                                                <td>
+                                                    <form action = "php/delete_doctor.php" method = "POST">
+                                                        <input type = "hidden" name = "id" value = " '. $data['id'] .' ">
+                                                        <button type="submit" class="btn btn-secondary delet" data-bs-dismiss="modal">
+                                                            <i class="fa-regular fa-trash-can" style = "color:white;"></i>
+                                                        </button>
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                        ';
+                                    }
+                                }
+                                else
+                                {
+                                    echo 
+                                    '
+                                        <tr>
+                                            <th style = "text-align:center;color:red;" colspan = "12">
+                                                No Students Rigth Now ..!
+                                            </th>
+                                        </tr>
+
+                                    ';
+                                }
+                            ?>
                         </tbody>
                     </table>
                 </div>
