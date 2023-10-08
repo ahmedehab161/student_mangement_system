@@ -23,17 +23,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500&display=swap" rel="stylesheet" />
-    <script>
+    <!-- <script>
        $(document).ready(function(){
         $("#txtsearch").on("keyup" , function(){
             var value = $(this).val().toLowerCase();
-            $("#emp tr").filter(function(){
+            $("#data tr").filter(function(){
                 $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
             });
-            $("#emp tr:first").show();
+            $("#data tr:first").show();
         });
        });
-    </script>
+    </script> -->
 </head>
 
 <body>
@@ -247,8 +247,8 @@
                 </div>
                 <!-- Search -->
                     <div class="icons align-center">
-                        <span>Search By Any  Parameter</span>
-                        <input class = "search" type = "text">
+                        <span>Search By Student ID</span>
+                        <input class = "search" type = "number" id="myInput" onkeyup="myFunction()">
                         <!-- <select name = "depatment">
                             <option value = "CS">CS</option>
                         </select> -->
@@ -274,7 +274,7 @@
                 </div>
 
                 <div class="modal-body">
-                    <table class="table">
+                    <table class="table" id="myTable">
                         <thead class="table-light">
                             <td>
                                 <h6>Image</h6>
@@ -310,7 +310,7 @@
                                 <h6>Operation</h6>
                             </td>
                         </thead>
-                        <tbody id = "data">
+                        <tbody>
                             <?php 
                                 require('php/add_new_student.php');
                                 $select = "select * from students";
@@ -392,5 +392,6 @@
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
         <script src = "../../../js/destroyerror.js"></script>
+        <script src = "../../../js/search.js"></script>
 </body>
 </html>
