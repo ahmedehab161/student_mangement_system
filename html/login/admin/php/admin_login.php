@@ -34,7 +34,7 @@
                 {
                     $_SESSION['image'] = $row['image'];
                     $_SESSION['name'] = $row['name'];
-                    $_SESSION['adminid'] = $row['id'];
+                    $_SESSION['tableadminid'] = $row['id'];
                     header('location:../../../html/admin/profile.php');
                 }
             }
