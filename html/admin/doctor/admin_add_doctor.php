@@ -216,17 +216,20 @@
                         </div>
                     </div>
                 </div>
-                <div class="icons d-flex align-center">
-                    <div class="icons d-flex align-center">
-                        <!-- <span class="notification p-relative">
-                            <i class="fa-regular fa-bell fa-lg"></i>
-                        </span> -->
-                        <a href = "../profile.php" style = "text-decoration:none;color:black;">
-                            <img src="<?php if($_SESSION['image'] == NULL){echo "../../../imgs/avatar.png";}else{echo "../images/" . $_SESSION['image'];}; ?>" alt="User Image" />
-                            <?php if($_SESSION['name'] == NULL){echo "No Name";}else{echo $_SESSION['name'];}; ?>
-                        </a>
-                    </div>
+                <!-- Profile section -->
+                <div class = "icons" style = "position: absolute;text-align: left;">
+                    <a href = "../profile.php" style = "text-decoration:none;color:black;">
+                        <img src="<?php if($_SESSION['image'] == NULL){echo "../../../imgs/avatar.png";}else{echo "../images/" . $_SESSION['image'];}; ?>" alt="User Image" />
+                        <?php if($_SESSION['name'] == NULL){echo "No Name";}else{echo $_SESSION['name'];}; ?>
+                    </a>
                 </div>
+                <!-- End Profile Section -->
+                    <!-- Search -->
+                    <div class="icons align-center">
+                        <span>Search By Student ID</span>
+                        <input class = "search" type = "number" id="myInput" onkeyup="myFunction()">
+                    </div>
+                <!-- End Search -->
             </div>
             <!-- End Head -->
             <div class="modal-content formes">
