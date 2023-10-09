@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="../../css/all.min.css" />
     <link rel="stylesheet" href="../../css/framework.css" />
     <link rel="stylesheet" href="../../css/Admin.css" />
+    <link rel="stylesheet" href="../../css/profile.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -113,14 +114,22 @@
                     
                 </div>
             </div>
-            <div style = "text-align:center;">
-                <img height = "200px" style = "margin-top:15px;" src="<?php if($_SESSION['image'] == NULL){echo "../../imgs/avatar.png";}else{echo "images/" . $_SESSION['image'];} ?>" alt="User Image" />
+            <!-- End Head -->
+        </div>
+        <div class = "container">
+            <div>
+                <img class = "image" src="<?php if($_SESSION['image'] == NULL){echo "../../imgs/avatar.png";}else{echo "images/" . $_SESSION['image'];} ?>" alt="User Image" />
+                <p class = "name"><b>Ahmed ehab</b></p>
+                <p class = "type"><b>UserType : ADMIN</b></p>
+                <p><b>LastUpdate : </b></p>
             </div>
 
-            <div>
-                <lable>Change Password</lable>
+            <div class = "btn2">
+                <span>Change Password</span>
             </div>
-            <!-- End Head -->
+            <div class = "btn1">
+                <span>Change Photo</span>
+            </div>
         </div>
     </div>
     <script src = "../../js/destroyerror.js"></script>

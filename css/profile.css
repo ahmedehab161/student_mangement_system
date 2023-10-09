@@ -1,0 +1,44 @@
+.container{
+    position: relative;
+    top: 90px;
+    right: 23%;
+    width: 500px;
+    height: 500px;
+    border: 5px solid #0075ff;
+    text-align: center;
+    border-radius: 30px;
+}
+.image{
+    position: relative;
+    height: 180px;
+    width: 180px;
+}
+.name{
+    font-size: 35px;
+}
+.btn1{
+    position: absolute;
+    border: 2px solid #0075ff;
+    padding: 10px;
+    left: 410px;
+    top: 330px;
+    border-radius: 10px;
+    font-weight: 500;
+}
+.btn2{
+    position: absolute;
+    border: 2px solid #0075ff;
+    padding: 10px;
+    left: 90px;
+    top: 330px;
+    border-radius: 10px;
+    font-weight: 500;
+}
+.btn1:hover{
+    background-color: #0075ff;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.btn2:hover {
+    background-color: #0075ff;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
