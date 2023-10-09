@@ -1,5 +1,10 @@
 <?php
     session_start();
+    if(!isset($_SESSION['tableadminid']))
+    {
+        $_SESSION['error'] = "You Connot Enter This Page Befor Login";
+        header('location:../login/admin/login_admin.php');
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,11 +19,11 @@
     <link rel="stylesheet" href="../../css/framework.css" />
     <link rel="stylesheet" href="../../css/Admin.css" />
     <link rel="stylesheet" href="../../css/profile.css" />
+    <link rel="stylesheet" href="../../css/errors.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="../../css/errors.css" />
 </head>
 
 <body>
@@ -94,6 +99,60 @@
         <div class="content w-full">
             <!-- Start Head -->
             <div class="head bg-white p-15 between-flex a">
+                <div class="newadds">
+                    <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h3 class="modal-title fs-5" id="exampleModalLabel2">Change Password</h3>
+                                    <i class="fa-solid fa-lock"></i>
+                                </div>
+
+                                <div class="modal-body">
+                                    <form action="" method="POST" enctype="multipart/form-data">
+                                        <div class="mb-3">
+                                            <label for="recipient-name" class="col-form-label">Old Password</label>
+                                            <input type="password" placeholder = "Password"><br>
+                                            <label for="recipient-name" class="col-form-label">New Password</label>
+                                            <input type="text" placeholder = "New Password"><br>
+                                            <label for="recipient-name" class="col-form-label">Confirm Password</label>
+                                            <input type="text" placeholder = "Confirm Password">
+                                        </div>
+                                        <div class="modal-footer">
+                                            <input class="loginbt" type="submit" value="Change" name="Change">
+                                            <input  class="loginbtr" type="reset" value="Undo" name="reset">
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="newadds">
+                    <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h3 class="modal-title fs-5" id="exampleModalLabel2">Change Photo</h3>
+                                    <i class="fa-solid fa-photo-film"></i>
+                                </div>
+
+                                <div class="modal-body">
+                                    <form action="" method="POST" enctype="multipart/form-data">
+                                        <div class="mb-3">
+                                            <label for="recipient-name" class="col-form-label">Choose File</label>
+                                            <input type="file" required class="form-control name" name="exceldata">
+                                        </div>
+                                        <div class="modal-footer">
+                                            <input class="loginbt" type="submit" value="Upload" name="upload">
+                                            <input  class="loginbtr" type="reset" value="Undo" name="reset">
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div>
                     <?php
                         if(isset($_SESSION['error']))
@@ -124,14 +183,22 @@
                 <p><b>LastUpdate : </b></p>
             </div>
 
-            <div class = "btn2">
-                <span>Change Password</span>
+            <div>
+                <button type = "button" class = "btn2" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+                    <i class="fa-solid fa-lock"></i>
+                    Change Password
+                </button>
             </div>
-            <div class = "btn1">
-                <span>Change Photo</span>
+            <div>
+                <button type="button" class="btn1" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                    <i class="fa-solid fa-photo-film"></i>
+                    Change Photo
+                </button>
             </div>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     <script src = "../../js/destroyerror.js"></script>
 </body>
 

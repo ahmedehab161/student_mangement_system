@@ -23,17 +23,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500&display=swap" rel="stylesheet" />
-    <!-- <script>
-       $(document).ready(function(){
-        $("#txtsearch").on("keyup" , function(){
-            var value = $(this).val().toLowerCase();
-            $("#data tr").filter(function(){
-                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-            });
-            $("#data tr:first").show();
-        });
-       });
-    </script> -->
 </head>
 
 <body>
@@ -249,10 +238,7 @@
                 <div class="doc-but">
                     <h1 class="p-relative">Students</h1>
                     <button type="button" class="btn btn-primary add" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="25" fill="currentColor" class="bi bi-person-plus-fill" viewBox="0 0 16 16">
-                            <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
-                            <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
-                        </svg>
+                        
                     </button>
                     <button type="button" class="btn btn-primary add" data-bs-toggle="modal" data-bs-target="#exampleModal2">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="25" fill="currentColor" class="bi bi-person-plus-fill" viewBox="0 0 512 512">
