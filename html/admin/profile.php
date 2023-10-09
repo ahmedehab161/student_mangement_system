@@ -176,30 +176,92 @@
             <!-- End Head -->
         </div>
         <div class = "container">
-            <div>
+            <div class = "postion">
                 <img class = "image" src="<?php if($_SESSION['image'] == NULL){echo "../../imgs/avatar.png";}else{echo "images/" . $_SESSION['image'];} ?>" alt="User Image" />
-                <p class = "name"><b>Ahmed ehab</b></p>
+                <p class = "name"><b>Ahmed Ehab</b></p>
                 <p class = "type"><b>UserType : ADMIN</b></p>
-                <p><b>LastUpdate : </b></p>
+                
+                    <p><b> 
+                        <?php
+                        // Time Ago
+                            // function time_ago($date) {
+                            //         $timestamp = strtotime($date);
+                            //         $time_ago = time() - $timestamp;
+                            //         $time_ago = ($time_ago < 1) ? 1 : $time_ago;
+                            //         $tokens = array(
+                            //             31536000 => 'year',
+                            //             2592000 => 'month',
+                            //             604800 => 'week',
+                            //             86400 => 'day',
+                            //             3600 => 'hour',
+                            //             60 => 'minute',
+                            //             1 => 'second'
+                            //         );
+                            //         foreach ($tokens as $unit => $text) {
+                            //             if ($time_ago < $unit) continue;
+                            //             $numberOfUnits = floor($time_ago / $unit);
+                            //             return $numberOfUnits . ' ' . $text . (($numberOfUnits > 1) ? 's' : '') . ' ago';
+                            //         }
+                            //     }
+                            // // Date Formate =>> Y-D-M / Time Formate =>> 24 hour
+                            //     $date = "2023-10-09 16:30:00";
+                            //     echo time_ago($date);
+
+
+                            echo "<div id = 'date'>";
+                                if(date("Y-m-d H:i:s") > "2023-10-09 17:40:00")
+                                {
+                                    echo 
+                                    '<div id="overlay">
+                                        <div id="content">
+                                            <p>Click anywhere to close this page.</p>
+                                        </div>
+                                    </div>';
+                                }
+                                else
+                                {
+                                        // Set the date and time
+                                        $date = new DateTime('2023-10-09 17:40:00');
+
+                                        // Get the current date and time
+                                        $now = new DateTime();
+
+                                        // Calculate the difference between the current date and time and the target date and time
+                                        $interval = $date->diff($now);
+
+                                        // Display the remaining time
+                                        echo 'Remaining time: ' . $interval->format('%h hours, %i minutes, %s seconds');
+                                }
+                            echo "</div>";
+                        ?>
+                    </b></p>
             </div>
 
-            <div>
-                <button type = "button" class = "btn2" data-bs-toggle="modal" data-bs-target="#exampleModal1">
-                    <i class="fa-solid fa-lock"></i>
-                    Change Password
-                </button>
-            </div>
-            <div>
-                <button type="button" class="btn1" data-bs-toggle="modal" data-bs-target="#exampleModal2">
-                    <i class="fa-solid fa-photo-film"></i>
-                    Change Photo
-                </button>
+            <div class = "pos">
+                <div>
+                    <button type = "button" class = "btn2" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+                        <i class="fa-solid fa-lock"></i>
+                        Change Password
+                    </button>
+                </div>
+                <div>
+                    <button type="button" class="btn1" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                        <i class="fa-solid fa-photo-film"></i>
+                        Change Photo
+                    </button>
+                </div>
             </div>
         </div>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     <script src = "../../js/destroyerror.js"></script>
+    <script>
+        setInterval(function() {
+            $('#date').load('profile.php #date');
+        }, 1000);
+    </script>
 </body>
 
 </html>

@@ -1,3 +1,7 @@
+.postion{
+    position: relative;
+    top: 40px;
+}
 .container{
     position: relative;
     top: 90px;
@@ -21,7 +25,7 @@
     border: 2px solid #0075ff;
     padding: 10px;
     left: 410px;
-    top: 330px;
+    top: 390px;
     border-radius: 10px;
     font-weight: 500;
 }
@@ -30,7 +34,7 @@
     border: 2px solid #0075ff;
     padding: 10px;
     left: 90px;
-    top: 330px;
+    top: 390px;
     border-radius: 10px;
     font-weight: 500;
 }
@@ -41,4 +45,23 @@
 .btn2:hover {
     background-color: #0075ff;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+#overlay {
+position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.821);
+}
+
+#content {
+    position: relative;
+    top : 40%;
+    z-index: 1;
+    padding: 20px;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
 }
