@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="../../css/Admin.css" />
     <link rel="stylesheet" href="../../css/profile.css" />
     <link rel="stylesheet" href="../../css/errors.css" />
+    <link rel="stylesheet" href="../../css/overlay.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -208,13 +209,13 @@
                             //     echo time_ago($date);
 
 
-                            echo "<div id = 'date'>";
+                            // echo "<div id = 'date'>";
                                 if(date("Y-m-d H:i:s") > "2023-10-09 17:40:00")
                                 {
                                     echo 
                                     '<div id="overlay">
                                         <div id="content">
-                                            <p>Click anywhere to close this page.</p>
+                                            <p class = "text">Register Closed Now</p>
                                         </div>
                                     </div>';
                                 }
@@ -232,7 +233,7 @@
                                         // Display the remaining time
                                         echo 'Remaining time: ' . $interval->format('%h hours, %i minutes, %s seconds');
                                 }
-                            echo "</div>";
+                            // echo "</div>";
                         ?>
                     </b></p>
             </div>
