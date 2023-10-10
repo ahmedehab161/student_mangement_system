@@ -1,4 +1,5 @@
 <?php
+    require('student/php/connection.php');
     session_start();
     if(!isset($_SESSION['tableadminid']))
     {
@@ -185,54 +186,58 @@
                     <p><b> 
                         <?php
                         // Time Ago
-                            // function time_ago($date) {
-                            //         $timestamp = strtotime($date);
-                            //         $time_ago = time() - $timestamp;
-                            //         $time_ago = ($time_ago < 1) ? 1 : $time_ago;
-                            //         $tokens = array(
-                            //             31536000 => 'year',
-                            //             2592000 => 'month',
-                            //             604800 => 'week',
-                            //             86400 => 'day',
-                            //             3600 => 'hour',
-                            //             60 => 'minute',
-                            //             1 => 'second'
-                            //         );
-                            //         foreach ($tokens as $unit => $text) {
-                            //             if ($time_ago < $unit) continue;
-                            //             $numberOfUnits = floor($time_ago / $unit);
-                            //             return $numberOfUnits . ' ' . $text . (($numberOfUnits > 1) ? 's' : '') . ' ago';
-                            //         }
-                            //     }
-                            // // Date Formate =>> Y-D-M / Time Formate =>> 24 hour
-                            //     $date = "2023-10-09 16:30:00";
-                            //     echo time_ago($date);
+                            function time_ago($date) {
+                                    $timestamp = strtotime($date);
+                                    $time_ago = time() - $timestamp;
+                                    $time_ago = ($time_ago < 1) ? 1 : $time_ago;
+                                    $tokens = array(
+                                        31536000 => 'year',
+                                        2592000 => 'month',
+                                        604800 => 'week',
+                                        86400 => 'day',
+                                        3600 => 'hour',
+                                        60 => 'minute',
+                                        1 => 'second'
+                                    );
+                                    foreach ($tokens as $unit => $text) {
+                                        if ($time_ago < $unit) continue;
+                                        $numberOfUnits = floor($time_ago / $unit);
+                                        return $numberOfUnits . ' ' . $text . (($numberOfUnits > 1) ? 's' : '') . ' ago';
+                                    }
+                                }
+                            // Date Formate =>> Y-D-M / Time Formate =>> 24 hour
+                            $select = "select updated_at from dr_staff WHERE work_id = {$_SESSION['workid']}";
+                            $show = mysqli_query($conn, $select);
+                            foreach($show as $data)
+                            {
+                                echo time_ago($data['updated_at']);
+                            }
 
 
                             // echo "<div id = 'date'>";
-                                if(date("Y-m-d H:i:s") > "2023-10-09 17:40:00")
-                                {
-                                    echo 
-                                    '<div id="overlay">
-                                        <div id="content">
-                                            <p class = "text">Register Closed Now</p>
-                                        </div>
-                                    </div>';
-                                }
-                                else
-                                {
-                                        // Set the date and time
-                                        $date = new DateTime('2023-10-09 17:40:00');
+                            //     if(date("Y-m-d H:i:s") > "2023-10-09 17:40:00")
+                            //     {
+                            //         echo 
+                            //         '<div id="overlay">
+                            //             <div id="content">
+                            //                 <p class = "text">Register Closed Now</p>
+                            //             </div>
+                            //         </div>';
+                            //     }
+                            //     else
+                            //     {
+                            //             //Set the date and time
+                            //             $date = new DateTime('2023-10-09 17:40:00');
 
-                                        // Get the current date and time
-                                        $now = new DateTime();
+                            //             //Get the current date and time
+                            //             $now = new DateTime();
 
-                                        // Calculate the difference between the current date and time and the target date and time
-                                        $interval = $date->diff($now);
+                            //              Calculate the difference between the current date and time and the target date and time
+                            //             $interval = $date->diff($now);
 
-                                        // Display the remaining time
-                                        echo 'Remaining time: ' . $interval->format('%h hours, %i minutes, %s seconds');
-                                }
+                            //             //Display the remaining time
+                            //             echo 'Remaining time: ' . $interval->format('%h hours, %i minutes, %s seconds');
+                            //     }
                             // echo "</div>";
                         ?>
                     </b></p>
