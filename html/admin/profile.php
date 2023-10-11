@@ -180,7 +180,7 @@
         </div>
         <div class = "container">
             <div class = "postion">
-                <img class = "image" src = "<?php if($_SESSION['image'] == NULL){echo "../../imgs/avatar.png";}else{echo "images/" . $_SESSION['image'];} ?>" alt="User Image" />
+                <img class = "image" src = "<?php $photo2 = mysqli_query($conn , "SELECT image FROM dr_staff WHERE work_id = {$_SESSION['workid']}");foreach($photo2 as $newphoto){$_SESSION['image'] = $newphoto['image'];} if($_SESSION['image'] == NULL){echo "../../imgs/avatar.png";}else{echo "images/" . $_SESSION['image'];} ?>" alt="User Image" />
                     <?php
                         $select2 = "SELECT name , user_type FROM dr_staff WHERE work_id = {$_SESSION['workid']}";
                         $show2 = mysqli_query($conn, $select2);
