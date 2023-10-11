@@ -1,5 +1,6 @@
 <?php
-    require('student/php/connection.php');
+    require('php/connection.php');
+    require('php/update_admin_data.php');
     session_start();
     if(!isset($_SESSION['tableadminid']))
     {
@@ -111,18 +112,18 @@
                                 </div>
 
                                 <div class="modal-body">
-                                    <form action="" method="POST" enctype="multipart/form-data">
+                                    <form action="" method="POST">
                                         <div class="mb-3">
                                             <label for="recipient-name" class="col-form-label">Old Password</label>
-                                            <input type="password" placeholder = "Password"><br>
+                                            <input type="password" placeholder = "Password" name = "old_password"><br>
                                             <label for="recipient-name" class="col-form-label">New Password</label>
-                                            <input type="text" placeholder = "New Password"><br>
+                                            <input type="text" placeholder = "New Password" name = "new_password"><br>
                                             <label for="recipient-name" class="col-form-label">Confirm Password</label>
-                                            <input type="text" placeholder = "Confirm Password">
+                                            <input type="text" placeholder = "Confirm Password" name = "confirm_password">
                                         </div>
                                         <div class="modal-footer">
-                                            <input class="loginbt" type="submit" value="Change" name="Change">
-                                            <input  class="loginbtr" type="reset" value="Undo" name="reset">
+                                            <input class="loginbt" type="submit" value="Change" name="change">
+                                            <input  class="loginbtr" type="reset" value="Reset" name="reset">
                                         </div>
                                     </form>
                                 </div>
@@ -143,7 +144,7 @@
                                     <form action="" method="POST" enctype="multipart/form-data">
                                         <div class="mb-3">
                                             <label for="recipient-name" class="col-form-label">Choose File</label>
-                                            <input type="file" required class="form-control name" name="exceldata">
+                                            <input type="file" required class="form-control name" name="image">
                                         </div>
                                         <div class="modal-footer">
                                             <input class="loginbt" type="submit" value="Upload" name="upload">
@@ -160,13 +161,13 @@
                         if(isset($_SESSION['error']))
                         {
                             echo '<div id = "errorm" class = "error">';
-                                echo $_SESSION['error'];
+                                echo '<p>'. $_SESSION['error'] .'</p>';
                             echo "</div>";
                         }
                         elseif(isset($_SESSION['suc']))
                         {
                             echo '<div id = "sucm" class = "success">';
-                                echo $_SESSION['suc'];
+                                echo '<p>'. $_SESSION['suc'] .'</p>';
                             echo "</div>";
                         }
                     ?>
@@ -179,10 +180,19 @@
         </div>
         <div class = "container">
             <div class = "postion">
-                <img class = "image" src="<?php if($_SESSION['image'] == NULL){echo "../../imgs/avatar.png";}else{echo "images/" . $_SESSION['image'];} ?>" alt="User Image" />
-                <p class = "name"><b>Ahmed Ehab</b></p>
-                <p class = "type"><b>UserType : ADMIN</b></p>
-                
+                <img class = "image" src = "<?php if($_SESSION['image'] == NULL){echo "../../imgs/avatar.png";}else{echo "images/" . $_SESSION['image'];} ?>" alt="User Image" />
+                    <?php
+                        $select2 = "SELECT name , user_type FROM dr_staff WHERE work_id = {$_SESSION['workid']}";
+                        $show2 = mysqli_query($conn, $select2);
+                        foreach($show2 as $data2)
+                        {
+                            echo 
+                            '
+                                <p class = "name"><b>'. $data2['name'] .'</b></p>
+                                <p class = "type"><b>UserType : '. $data2['user_type'] .'</b></p>
+                            ';
+                        }
+                    ?>
                     <p><b> 
                         <?php
                         // Time Ago
