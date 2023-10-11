@@ -60,12 +60,6 @@
         $newfilename = date('dmYHis').str_replace(" " , "" , basename($_FILES["image"]["name"]));
         move_uploaded_file($_FILES["image"]["tmp_name"] , "images/" . $newfilename);
 
-        // $photo2 = mysqli_query($conn , "SELECT image FROM dr_staff WHERE work_id = {$_SESSION['workid']}");
-        // foreach($photo2 as $newphoto)
-        // {
-        //     $_SESSION['image'] = $newphoto['image'];
-        // }
-
         $update = "UPDATE dr_staff SET image = '$newfilename' , updated_at = '$timeanddate' WHERE work_id = {$_SESSION['workid']}";
         mysqli_query($conn , $update);
         
