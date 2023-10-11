@@ -49,7 +49,7 @@
     elseif(isset($_POST['upload'])) 
     {
         $newfilename = date('dmYHis').str_replace(" " , "" , basename($_FILES["image"]["name"]));
-        move_uploaded_file($_FILES["image"]["tmp_name"], "../../images/" . $newfilename);
+        move_uploaded_file($_FILES["image"]["tmp_name"] , "images/" . $newfilename);
 
         $update = "UPDATE dr_staff SET image = '$newfilename' WHERE work_id = {$_SESSION['workid']}";
         mysqli_query($conn , $update);
