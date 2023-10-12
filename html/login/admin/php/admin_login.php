@@ -19,7 +19,7 @@
             $id = mysqli_real_escape_string($conn , $_POST['workid']);
             $pass = $_POST['password'];
 
-            $select = "SELECT * FROM dr_staff WHERE work_id = '$id' AND password = '$pass'";
+            $select = "SELECT * FROM employees WHERE work_id = '$id' AND password = '$pass'";
             $result = mysqli_query($conn , $select);
             $row = mysqli_fetch_array($result);
 
