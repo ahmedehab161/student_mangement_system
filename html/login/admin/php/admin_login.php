@@ -25,18 +25,26 @@
 
             if(mysqli_num_rows($result) > 0)
             {
-                if($row['activity'] == "notactive")
+                if($row['user_type'] != 'DOCTOR')
                 {
-                    error("This Account Is Not Active Please Go To Adminstration");
-                    header('location:login_admin.php');
+                    if($row['activity'] == "notactive")
+                    {
+                        error("This Account Is Not Active Please Go To Adminstration");
+                        header('location:login_admin.php');
+                    }
+                    elseif($row['activity'] == "active")
+                    {
+                        $_SESSION['workid'] = $row['work_id'];
+                        $_SESSION['image'] = $row['image'];
+                        $_SESSION['name'] = $row['name'];
+                        $_SESSION['tableadminid'] = $row['id'];
+                        header('location:../../../html/admin/profile.php');
+                    }
                 }
-                elseif($row['activity'] == "active")
+                else
                 {
-                    $_SESSION['workid'] = $row['work_id'];
-                    $_SESSION['image'] = $row['image'];
-                    $_SESSION['name'] = $row['name'];
-                    $_SESSION['tableadminid'] = $row['id'];
-                    header('location:../../../html/admin/profile.php');
+                    error("This Account Not Allowed To Enter This Section");
+                    header('location:login_admin.php');
                 }
             }
             else
