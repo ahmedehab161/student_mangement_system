@@ -101,7 +101,7 @@
         </div>
         <div class="content w-full">
             <!-- Start Head -->
-            <div class="head bg-white p-15 between-flex a">
+            <!-- <div class="head bg-white p-15 between-flex a"> -->
                 <div class="newadds">
                     <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
                         <div class="modal-dialog">
@@ -175,7 +175,7 @@
                 <div class="icons d-flex align-center">
                     
                 </div>
-            </div>
+            <!-- </div> -->
             <!-- End Head -->
         </div>
         <div class = "container">
