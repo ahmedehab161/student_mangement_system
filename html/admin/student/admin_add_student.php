@@ -281,6 +281,9 @@
                                 <h6>Address</h6>
                             </td>
                             <td>
+                                <h6>Activity</h6>
+                            </td>
+                            <td>
                                 <h6>Birth Date</h6>
                             </td>
                             <td colspan = "2">
@@ -325,6 +328,9 @@
                                                 </td>
                                                 <td>
                                                     '. $data['address'] .'
+                                                </td>
+                                                <td>
+                                                    '. $data['activity'] .'
                                                 </td>
                                                 <td>
                                                     '. $data['birth_date'] .'
