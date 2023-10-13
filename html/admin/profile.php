@@ -180,9 +180,9 @@
         </div>
         <div class = "container">
             <div class = "postion">
-                <img class = "image" src = "<?php $photo2 = mysqli_query($conn , "SELECT image FROM dr_staff WHERE work_id = {$_SESSION['workid']}");foreach($photo2 as $newphoto){$_SESSION['image'] = $newphoto['image'];} if($_SESSION['image'] == NULL){echo "../../imgs/avatar.png";}else{echo "images/" . $_SESSION['image'];} ?>" alt="User Image" />
+                <img class = "image" src = "<?php $photo2 = mysqli_query($conn , "SELECT image FROM employees WHERE emp_id = {$_SESSION['empid']}");foreach($photo2 as $newphoto){$_SESSION['image'] = $newphoto['image'];} if($_SESSION['image'] == NULL){echo "../../imgs/avatar.png";}else{echo "images/" . $_SESSION['image'];} ?>" alt="User Image" />
                     <?php
-                        $select2 = "SELECT name , user_type FROM dr_staff WHERE work_id = {$_SESSION['workid']}";
+                        $select2 = "SELECT name , user_type FROM employees WHERE emp_id = {$_SESSION['empid']}";
                         $show2 = mysqli_query($conn, $select2);
                         foreach($show2 as $data2)
                         {
@@ -216,11 +216,18 @@
                                     }
                                 }
                             // Date Formate =>> Y-D-M / Time Formate =>> 24 hour
-                            $select = "select updated_at from dr_staff WHERE work_id = {$_SESSION['workid']}";
+                            $select = "select updated_at from employees WHERE emp_id = {$_SESSION['empid']}";
                             $show = mysqli_query($conn, $select);
                             foreach($show as $data)
                             {
-                                echo time_ago($data['updated_at']);
+                                if($data['updated_at'] != NULL)
+                                {
+                                    echo "Updated : " . time_ago($data['updated_at']);
+                                }
+                                else
+                                {
+                                    echo "";
+                                }
                             }
                         ?>
                     </b></p>

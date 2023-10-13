@@ -19,7 +19,7 @@
         $newpassword = $_POST['new_password'];
         $confirmpassword = $_POST['confirm_password'];
 
-        $select = "SELECT * FROM dr_staff WHERE work_id = {$_SESSION['workid']}";
+        $select = "SELECT * FROM employees WHERE emp_id = {$_SESSION['empid']}";
         $query = mysqli_query($conn , $select);
 
         if($newpassword == $confirmpassword)
@@ -28,7 +28,7 @@
             {
                 if($data['password'] == $oldpassword)
                 {
-                    $update = "UPDATE dr_staff SET password = '$confirmpassword' WHERE work_id = {$_SESSION['workid']}";
+                    $update = "UPDATE employees SET password = '$confirmpassword' WHERE emp_id = {$_SESSION['empid']}";
                     mysqli_query($conn , $update);
                     suc("Password Updated");
                     header("location:profile.php");
@@ -50,7 +50,7 @@
     {
         $timeanddate = date("d-m-Y H:i:s");
 
-        $photo = mysqli_query($conn , "SELECT image FROM dr_staff WHERE work_id = {$_SESSION['workid']}");
+        $photo = mysqli_query($conn , "SELECT image FROM employees WHERE emp_id = {$_SESSION['empid']}");
         foreach($photo as $photodelete)
         {
             $file = "images/" . $photodelete['image'];
@@ -60,7 +60,7 @@
         $newfilename = date('dmYHis').str_replace(" " , "" , basename($_FILES["image"]["name"]));
         move_uploaded_file($_FILES["image"]["tmp_name"] , "images/" . $newfilename);
 
-        $update = "UPDATE dr_staff SET image = '$newfilename' , updated_at = '$timeanddate' WHERE work_id = {$_SESSION['workid']}";
+        $update = "UPDATE employees SET image = '$newfilename' , updated_at = '$timeanddate' WHERE emp_id = {$_SESSION['empid']}";
         mysqli_query($conn , $update);
         
         suc("Photo Changed");

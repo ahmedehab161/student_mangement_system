@@ -284,7 +284,7 @@
                         <tbody>
                             <?php
                                 require('php/add_new_doctor.php');
-                                $select = "SELECT * FROM dr_staff WHERE work_id != {$_SESSION['workid']} AND user_type = 'DOCTOR'";
+                                $select = "SELECT * FROM dr_staff WHERE user_type = 'DOCTOR'";
                                 $show = mysqli_query($conn , $select);
                                 if(mysqli_num_rows($show) > 0)
                                 {

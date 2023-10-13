@@ -19,13 +19,13 @@
             $id = mysqli_real_escape_string($conn , $_POST['workid']);
             $pass = $_POST['password'];
 
-            $select = "SELECT * FROM dr_staff WHERE work_id = '$id' AND password = '$pass'";
+            $select = "SELECT * FROM employees WHERE emp_id = '$id' AND password = '$pass'";
             $result = mysqli_query($conn , $select);
             $row = mysqli_fetch_array($result);
 
             if(mysqli_num_rows($result) > 0)
             {
-                if($row['user_type'] != 'DOCTOR')
+                if($row['user_type'] == 'ADMIN')
                 {
                     if($row['activity'] == "notactive")
                     {
@@ -34,7 +34,7 @@
                     }
                     elseif($row['activity'] == "active")
                     {
-                        $_SESSION['workid'] = $row['work_id'];
+                        $_SESSION['empid'] = $row['emp_id'];
                         $_SESSION['image'] = $row['image'];
                         $_SESSION['name'] = $row['name'];
                         $_SESSION['tableadminid'] = $row['id'];
