@@ -52,8 +52,8 @@
                     }
                 ?>
                 <div class="inputs">
-                    <input type="number" name="workid" placeholder="Work ID">
-                    <input type="password" name="password" placeholder="Password">
+                    <input type="number" name="workid" placeholder="Work ID" required>
+                    <input type="password" name="password" placeholder="Password" required>
                     <input type="submit" name="submit" value="Login Now" class="form-btn">
                 </div>
             </form>
