@@ -15,6 +15,8 @@
 
     if(isset($_POST['change']))
     {
+        $timeanddate = date("d-m-Y H:i:s");
+
         $oldpassword = $_POST['old_password'];
         $newpassword = $_POST['new_password'];
         $confirmpassword = $_POST['confirm_password'];
@@ -28,7 +30,7 @@
             {
                 if($data['password'] == $oldpassword)
                 {
-                    $update = "UPDATE employees SET password = '$confirmpassword' WHERE emp_id = {$_SESSION['empid']}";
+                    $update = "UPDATE employees SET password = '$confirmpassword' , updated_at = '$timeanddate' WHERE emp_id = {$_SESSION['empid']}";
                     mysqli_query($conn , $update);
                     suc("Password Updated");
                     header("location:profile.php");

@@ -22,12 +22,14 @@
             $select = "SELECT * FROM employees WHERE emp_id = '$id' AND password = '$pass'";
             $result = mysqli_query($conn , $select);
             $row = mysqli_fetch_array($result);
-
-            if(substr($id , 0 , 1) == 2 && $row['user_type'] == 'ADMIN')
+            
+            if($row['password'] = $pass)
             {
-                if(mysqli_num_rows($result) > 0)
+                if(substr($id , 0 , 1) == 2 && $row['user_type'] == 'ADMIN')
                 {
-                    
+                    if(mysqli_num_rows($result) > 0)
+                    {
+                        
                         if($row['activity'] == "notactive")
                         {
                             error("This Account Is Not Active Please Go To Adminstration");
@@ -41,17 +43,22 @@
                             $_SESSION['tableadminid'] = $row['id'];
                             header('location:../../../html/admin/profile.php');
                         }
+                    }
+                    else
+                    {
+                        error("WRONG ID OR PASSWORD");
+                        header('location:login_admin.php');
+                    }
                 }
                 else
                 {
-                    error("WRONG ID OR PASSWORD");
+                    error("This Account Not Allowed To Enter This Section");
                     header('location:login_admin.php');
                 }
             }
             else
             {
-                error("This Account Not Allowed To Enter This Section");
-                header('location:login_admin.php');
+                error("Your Password Is Not Correct");
             }
         }
     }
