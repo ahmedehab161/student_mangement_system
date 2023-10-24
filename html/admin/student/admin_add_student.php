@@ -221,13 +221,13 @@
             <div class="modal-content formes">
                 <div class="doc-but">
                     <h1 class="p-relative">Students</h1>
-                    <button type="button" class="btn btn-primary add" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">
+                    <button type="button" class="btn btn-primary add" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo" data-bs-toggle="tooltip" data-bs-placement="top" title="Manual Add">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="25" fill="currentColor" class="bi bi-person-plus-fill" viewBox="0 0 16 16">
                             <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
                             <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
                         </svg>
                     </button>
-                    <button type="button" class="btn btn-primary add" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                    <button type="button" class="btn btn-primary add" data-bs-toggle="modal" data-bs-target="#exampleModal2" data-bs-toggle="tooltip" data-bs-placement="top" title="Auto Add With CSV">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="25" fill="currentColor" class="bi bi-person-plus-fill" viewBox="0 0 512 512">
                             <path d="M0 64C0 28.7 28.7 0 64 0H224V128c0 17.7 14.3 32 32 32H384V304H176c-35.3 0-64 28.7-64 64V512H64c-35.3 0-64-28.7-64-64V64zm384 64H256V0L384 128zM200 352h16c22.1 0 40 17.9 40 40v8c0 8.8-7.2 16-16 16s-16-7.2-16-16v-8c0-4.4-3.6-8-8-8H200c-4.4 0-8 3.6-8 8v80c0 4.4 3.6 8 8 8h16c4.4 0 8-3.6 8-8v-8c0-8.8 7.2-16 16-16s16 7.2 16 16v8c0 22.1-17.9 40-40 40H200c-22.1 0-40-17.9-40-40V392c0-22.1 17.9-40 40-40zm133.1 0H368c8.8 0 16 7.2 16 16s-7.2 16-16 16H333.1c-7.2 0-13.1 5.9-13.1 13.1c0 5.2 3 9.9 7.8 12l37.4 16.6c16.3 7.2 26.8 23.4 26.8 41.2c0 24.9-20.2 45.1-45.1 45.1H304c-8.8 0-16-7.2-16-16s7.2-16 16-16h42.9c7.2 0 13.1-5.9 13.1-13.1c0-5.2-3-9.9-7.8-12l-37.4-16.6c-16.3-7.2-26.8-23.4-26.8-41.2c0-24.9 20.2-45.1 45.1-45.1zm98.9 0c8.8 0 16 7.2 16 16v31.6c0 23 5.5 45.6 16 66c10.5-20.3 16-42.9 16-66V368c0-8.8 7.2-16 16-16s16 7.2 16 16v31.6c0 34.7-10.3 68.7-29.6 97.6l-5.1 7.7c-3 4.5-8 7.1-13.3 7.1s-10.3-2.7-13.3-7.1l-5.1-7.7c-19.3-28.9-29.6-62.9-29.6-97.6V368c0-8.8 7.2-16 16-16z"/>
                         </svg>
@@ -320,19 +320,20 @@
                                                     '. $data['birth_date'] .'
                                                 </td>
                                                 <td> 
-                                                    <button type="button" class="btn btn-primary adds">
-                                                        <a href = "'. $data['id'] .'">
+                                                    <button type="button" class="btn btn-primary adds" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit">
+                                                        <a href = "http://127.0.0.1/Student_mangement_system/html/admin/student/edit_student_data.php?id='. $data['id'] .'&stu='. $data['stu_id'] .'">
                                                             <i class="fa-regular fa-pen-to-square" style = "color:white;"></i>
                                                         </a>
                                                     </button>
                                                 </td>
                                                 <td>
-                                                    <form action = "php/delete_student.php" method = "POST">
+                                                    <form action = "#" method = "POST">
                                                         <input type = "hidden" name = "id" value = " '. $data['id'] .' ">
-                                                        <button type="submit" class="btn btn-secondary delet" data-bs-dismiss="modal">
+                                                        <button type="submit" name = "del" class="btn btn-secondary delet" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete">
                                                             <i class="fa-regular fa-trash-can" style = "color:white;"></i>
                                                         </button>
                                                     </form>
+                                                    <i class="fa-regular fa-trash-can" style = "color:black;"></i>
                                                 </td>
                                             </tr>
                                         ';
