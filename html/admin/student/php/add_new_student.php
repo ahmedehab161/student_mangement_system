@@ -2,7 +2,7 @@
 require("connection.php");
 
 
-if($_POST['add'])
+if(isset($_POST['add']))
 {
     $name     = $_POST['name'];
     $student_id = $_POST['student_id'];
@@ -22,5 +22,12 @@ if($_POST['add'])
 
     
     header('location:admin_add_student.php');
+}
+elseif(isset($_POST['del']))
+{
+    $delet_student = "DELETE FROM students WHERE id = {$_POST['id']} ";
+    mysqli_query($conn , $delet_student);
+
+    header('location:../admin_add_student.php');
 }
 ?>
