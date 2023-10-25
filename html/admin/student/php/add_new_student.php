@@ -30,4 +30,9 @@ elseif(isset($_POST['del']))
 
     header('location:../admin_add_student.php');
 }
+elseif(isset($_POST['save']))
+{
+    $token = base64_encode(random_bytes(64));
+    echo $token;
+}
 ?>

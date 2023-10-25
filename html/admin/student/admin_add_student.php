@@ -277,6 +277,12 @@
                         <tbody>
                             <?php 
                                 require('php/add_new_student.php');
+                                $select2 = "SELECT token FROM admin_token WHERE owend_by = {$_SESSION['tableadminid']}";
+                                $show2 = mysqli_query($conn, $select2);
+                                foreach($show2 as $token)
+                                {
+                                    $tok = $token['token'];
+                                }
                                 $select = "select * from students";
                                 $show = mysqli_query($conn, $select);
                                 if(mysqli_num_rows($show) > 0)
@@ -321,7 +327,7 @@
                                                 </td>
                                                 <td> 
                                                     <button type="button" class="btn btn-primary adds" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit">
-                                                        <a href = "http://127.0.0.1/Student_mangement_system/html/admin/student/edit_student_data.php?id='. $data['id'] .'&stu='. $data['stu_id'] .'">
+                                                        <a href = "http://127.0.0.1/Student_mangement_system/html/admin/student/edit_student_data.php?id='. $data['id'] .'&stu='. $data['stu_id'] .'&token='. $tok .'&depart='.$data['depart'].'">
                                                             <i class="fa-regular fa-pen-to-square" style = "color:white;"></i>
                                                         </a>
                                                     </button>

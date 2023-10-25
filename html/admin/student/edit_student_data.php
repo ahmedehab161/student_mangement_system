@@ -1,9 +1,11 @@
 <?php
     session_start();
     require('php/connection.php');
+    require('php/add_new_student.php');
 
     $id_table = $_GET['id'];
     $stu_id = $_GET['stu'];
+    $depart = $_GET['depart'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -39,14 +41,12 @@
                     <div class = "d-grid gap-3">
                         <div class = "text-center border border-primary h-90">
                             <lable>Student ID :</lable>
-                            <lable><?php echo $stu_id ?></lable>
+                            <lable><?php echo $stu_id;?></lable>
                         </div>
                         <lable>Name</lable>
                         <input type = "text" name = "name">
                         <lable>Department</lable>
-                        <input type = "text" name = "depart" disabled>
-                        <lable>Paswword</lable>
-                        <input type = "text" name = "password">
+                        <input type = "text" name = "depart" value = "<?php echo $depart?>" disabled>
                         <lable>Email</lable>
                         <input type = "text" name = "email">
                         <lable>Phone</lable>
